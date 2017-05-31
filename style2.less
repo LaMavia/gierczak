@@ -1,0 +1,249 @@
+//helping classes
+.anim{transition: 1s 0s ease-out;}
+.anim1a{transition: 1s 0.11s ease-out;}
+.anim1b{transition: 1s 0s ease-out;}
+.shadowbox1{-webkit-box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
+            box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);}
+.shadowbox2{    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
+.textshadow1{
+    text-shadow: -4px -4px 2px rgba(0, 0, 0, 0.75);
+}
+//Main
+*{padding: 0;margin: 0;overflow-y: hidden;}
+@import url('https://fonts.googleapis.com/css?family=Jockey+One');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+html{
+    overflow: hidden;
+}
+body
+{
+    width: auto;
+    height: 100vh;
+    overflow: hidden;
+    background: #ff8800;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-wrap: nowrap;
+    display: inline-flex;
+    scroll-behavior:smooth;
+    .anim;
+    color: #fff;
+}
+form{
+    position: absolute;
+    top: 0;
+    bottom: -17px;
+    left: 0;
+    right: 0;
+    width: 400vw;
+    height: 100vh;
+    display: inline-flex;
+    flex-direction: row;
+    .anim;
+    overflow-x: scroll;
+    padding-bottom: 17px;
+}
+.box{
+    width: 100vw;
+    height: 100%;
+    text-align: center;
+    font-family: 'Jockey One', sans-serif;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    .textshadow1;
+    .anim;
+    
+    span{
+        font-family: 'Bungee Inline', cursive;
+        font-size: 150%;
+        margin-top: 35vh;
+        position: relative;
+        display: block;
+        left: -18%;
+    }
+    .pass{
+        margin-top: 27.5vh;
+        position: relative;
+        display: block;
+        left: -18%;
+        font-family: 'Bungee Inline', cursive;
+        font-size: 150%;
+    }
+    .email{
+        left: -19.5%;
+    }
+    
+        .next{
+            font-size: 100%;
+            display: block;
+            width: 10%;
+            height: 6%;
+            background: #1b1b1b;
+            color: #fff;
+            margin: auto;
+            text-align: center;
+            padding-top: 3vh;
+            text-decoration: none;
+            
+            .anim1a;
+            
+            &:hover{
+                .anim1b;
+                background: #1c1c1c;
+                color: #00ffff;
+            }
+        }
+        .back{
+            font-size: 100%;
+            display: block;
+            width: 10vw;
+            height: 6vh;
+            background: #1b1b1b;
+            color: #fff;
+            margin: auto;
+            text-align: center;
+            padding-top: 3vh;
+            text-decoration: none;
+            
+            .anim1a;
+            
+            &:hover{
+                .anim1b;
+                background: #1c1c1c;
+                color: #00ffff;
+            }
+        }
+    
+    
+    input{
+        background: #2b2b2b;
+        color: #fff;
+        font-size: 135%;
+        padding: 1%;
+        border: 0px transparent;
+        .shadowbox1;
+        .anim1a;
+        font-family: 'Jockey One', sans-serif;
+        
+        width: 58%;
+        height: 8%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2%;
+        
+        
+        
+        &:hover{
+            border-left: #00ffff 1% solid;
+            .anim1b;
+            }
+        }
+}
+
+.captcha-mod{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            width: auto;
+        }
+        .button-mod{
+            width: 50%;
+            height: 8%;
+            .shadowbox2;
+            .anim1a;
+            &:hover{
+                .shadowbox1;
+                .anim1b;
+                color: #00ffff;
+            }
+        }
+        .check{
+            width: 60%;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-flow: wrap;
+            flex-direction: row;
+            align-content: center;
+            overflow: visible;
+            span{
+                float: left;
+                width: auto;
+                padding-top: 1%;
+                color: #fff;
+                font-size: 110%;
+                margin: auto;
+            }
+            input{
+                width: 1vw;
+                height: 1vw;
+                background:#fff;
+                margin-right: 1vw;
+            }
+            .regul{
+                display: flex;
+                flex-direction: row;
+                flex-shrink: 1;
+                flex-wrap: nowrap;
+                float: left;
+                width: 50%;
+                height: auto;
+                *{margin: auto;}
+            }
+        }
+
+.clear{
+    clear: both;
+}
+
+//loader
+.loading{
+    position: fixed;
+    left: 0;
+    top: 0; 
+    width: 100vw;
+    height: 100vh;
+    background: #1b1b1b;
+    display: flex;
+    
+    *{
+        display: block;
+        width: 20vw;
+        height: 20vw;
+        margin:auto;
+        animation: loadingAnimation 1s 0s infinite ease-in-out;
+        transform: translateY(100%);
+    }
+    div{
+        &:nth-child(1){
+            background: #ff0000;
+            animation-delay: 0s;
+        }
+        &:nth-child(2){
+            background: #ff8800;
+            animation-delay: 0.25s;
+        }
+        &:nth-child(3){
+            background: #00ffff;
+            animation-delay: 0.5s;
+        }
+        &:nth-child(4){
+            background: #0021ff;
+            animation-delay: 0.75s;
+        }
+    }
+}
+@keyframes loadingAnimation{
+    
+    0%,100%{transform: translateY(100%);}
+    50%{transform: translateY(-100%);}
+    
+}
