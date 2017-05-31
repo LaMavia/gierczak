@@ -1,0 +1,26 @@
+@fx:fixed;
+//skróty//
+.w(@w) {width: @w};
+.min-w(@mw) {min-width: @mw};
+.h(@h) {height: @h};
+.min-h(@mh) {min-height: @mh};
+.m(@m) {margin: @m};
+.mr(@mr) {margin-right: @mr};
+.ml(@ml) {margin-left: @ml};
+.mt(@mt) {margin-top: @mt};
+.mb(@mb) {margin-bottom: @mb};
+.cir(@s){width: @s;height: @s;border-radius: 50%;}
+.ontop{z-index: 500; position: @fx;}
+.anim{transition:all 1s ease;}
+.anim2{transition:all 0.2s ease;}
+.anim3{transition:all 0.1s ease;}
+.anim4{transition:all 0.5s ease;}
+.img-sizing(@bg) {  background: url(@bg) no-repeat center center fixed; 
+  background-size: cover;}
+//Main
+body
+{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
