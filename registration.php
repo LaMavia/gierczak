@@ -111,7 +111,8 @@
                <div class="box" id="n">
                <span class="nick">What's your nickname?</span>
                 <input  type="text" name="nickname" placeholder="Nazwa Użytkownika">
-                   <a href="#email" class="next icon-right-open"></a>
+                   <a href="#email" class="next next_mod icon-right-open"></a>
+				   <div class="clear"></div>
 				<?php
 					if(isset($_SESSION["err_nick"])) {
 						echo $_SESSION["err_nick"].'<br>';
@@ -123,8 +124,11 @@
                <div class="box" id="email">
                <span class="email">What's your e-mail?</span>
                 <input  type="text" name="email" placeholder="E-mail" >
+				<div class="nav__holder">
                   <a href="#n" class="back icon-left-open"></a>
                   <a href="#pass" class="next icon-right-open"></a>
+				  <div class="clear"></div>
+				</div>
 				<?php
 					if(isset($_SESSION["err_email"])) {
 						echo $_SESSION["err_email"].'<br>';
@@ -143,8 +147,11 @@
 					}
 				?>
                 <input  type="password"  name="repassword" placeholder="Powtórz Hasło">
-                   <a href="#email" class="back icon-left-open"></a>
-                  <a href="#check" class="next icon-right-open"></a>
+                   <div class="nav__holder">
+                  	<a href="#email" class="back icon-left-open"></a>
+                  	<a href="#check" class="next icon-right-open"></a>
+				 	<div class="clear"></div>
+				</div>
                 </div>
                 <!--Checking part -->
 				<div class="box" id="check">
@@ -168,7 +175,8 @@
 					}
 				?>
                 <input type="submit" value="Zarejestruj" class="button-mod">
-                </div>
+                <a href="#n" class="back back_mod icon-left-open"></a>
+				</div>
         </form>
         <div id="loader" class="">
             <div></div>
