@@ -100,8 +100,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title> Rejestracja </title>
         
-        <link href="style2.css" rel="stylesheet">
-        <link href="css/fontello.css" rel="stylesheet">
+        <link href="css-less_files/style2.css" rel="stylesheet">
+        <link href="css-less_files/fontello.css" rel="stylesheet">
 		
     </head>
     
@@ -140,17 +140,17 @@
                <div class="box" id="pass">
                    <span class="pass">What's your password?</span>
                 <input  type="password"  name="password" placeholder="Hasło">
-				<?php
-					if(isset($_SESSION["err_pass"])) {
-						echo $_SESSION["err_pass"].'<br>';
-						unset($_SESSION["err_pass"]);
-					}
-				?>
                 <input  type="password"  name="repassword" placeholder="Powtórz Hasło">
                    <div class="nav__holder">
                   	<a href="#email" class="back icon-left-open"></a>
                   	<a href="#check" class="next icon-right-open"></a>
 				 	<div class="clear"></div>
+					<?php
+						if(isset($_SESSION["err_pass"])) {
+							echo $_SESSION["err_pass"].'<br>';
+							unset($_SESSION["err_pass"]);
+						}
+					?>
 				</div>
                 </div>
                 <!--Checking part -->
@@ -161,21 +161,20 @@
 				    <input type="checkbox" name="regulamin"><span>Akceptuję Regulamin</span>
 				    </div>
 				    <div class="g-recaptcha captcha-mod" data-sitekey="6Le3dyEUAAAAAOn-qg0Dwc8omngvtdPO7w_hDT1f"></div>
-				        <?php
-					if(isset($_SESSION["err_captcha"])) {
-						echo $_SESSION["err_captcha"].'<br>';
-						unset($_SESSION["err_captcha"]);
-					}
-				        ?>
 				</div> 
-				<?php
-					if(isset($_SESSION["err_regulamin"])) {
-						echo $_SESSION["err_regulamin"].'<br>';
-						unset($_SESSION["err_regulamin"]);
-					}
-				?>
                 <input type="submit" value="Zarejestruj" class="button-mod">
                 <a href="#n" class="back back_mod icon-left-open"></a>
+				<?php
+					if(isset($_SESSION["err_regulamin"])) {
+						echo $_SESSION["err_regulamin"]." ";
+						unset($_SESSION["err_regulamin"]);
+					}
+					if(isset($_SESSION["err_captcha"])) {
+						echo $_SESSION["err_captcha"];
+						unset($_SESSION["err_captcha"]);
+					}
+				?>
+				</div>
 				</div>
         </form>
         <div id="loader" class="">
@@ -186,7 +185,7 @@
         </div>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="jquery-scripts.js"></script>
+        <script src="js_files/jquery-scripts.js"></script>
         <script>
             $('#loader').addClass('loading');
             $(window).load(function(){

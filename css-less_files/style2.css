@@ -55,7 +55,6 @@ form {
   height: 100vh;
   display: inline-flex;
   flex-direction: row;
-  transition: 1s 0s ease-out;
   overflow-x: scroll;
   padding-bottom: 17px;
 }
@@ -69,7 +68,6 @@ form {
   flex-direction: column;
   flex-basis: auto;
   text-shadow: -4px -4px 2px rgba(0, 0, 0, 0.75);
-  transition: 1s 0s ease-out;
 }
 .box span {
   font-family: 'Bungee Inline', cursive;
@@ -242,7 +240,7 @@ form {
   height: 20vw;
   margin: auto;
   animation: loadingAnimation 1s 0s infinite ease-in-out;
-  transform: translateY(100%);
+  transform: translateY(165%);
 }
 .loading div:nth-child(1) {
   background: #ff0000;
@@ -263,7 +261,7 @@ form {
 @keyframes loadingAnimation {
   0%,
   100% {
-    transform: translateY(100%);
+    transform: translateY(165%);
   }
   50% {
     transform: translateY(-100%);
