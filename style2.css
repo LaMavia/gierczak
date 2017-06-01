@@ -238,7 +238,7 @@ form {
 }
 .loading * {
   display: block;
-  width: 20vw;
+  width: 25vw;
   height: 20vw;
   margin: auto;
   animation: loadingAnimation 1s 0s infinite ease-in-out;
