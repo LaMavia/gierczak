@@ -179,6 +179,7 @@
                 <input type="submit" value="Zarejestruj" class="button-mod">
                 <a href="#n" class="back back_mod icon-left-open"></a>
 				</div>
+				</div>
         </form>
         <div id="loader" class="">
             <div></div>
