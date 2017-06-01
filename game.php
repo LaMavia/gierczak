@@ -5,17 +5,20 @@
 <html lang="pl">
     <head>
         <title>Gierczak</title>
+
         <link href="style3.css" rel="stylesheet">
     </head>
     <body>
 <?php
 echo "Witaj ".$_SESSION["username"];
 ?>
-        <form action="sprawdz.php" method="post">
-            <input type="range" name="guess" min="0" max="10">
-			<p><input type="submit" value="Zgadnij"/></p>
+        <form class="box__main" action="sprawdz.php" method="post">
+			<input type="number"></input>
         </form>
-<?php
+		<div id="save"><a href="save.php">Save</a></div>
+
+
+		<?php
 	//hint
 	if(isset($_SESSION["message"])) {
 		echo '<div id="hint">'.$_SESSION["message"]."</div>"; 
@@ -30,6 +33,6 @@ echo "Witaj ".$_SESSION["username"];
 		echo $score;
 	}
 ?>
-		<div id="save"><a href="save.php">Save</a></div>
+	<script src="game.js"></script>
     </body>
 </html>
