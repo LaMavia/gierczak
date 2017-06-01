@@ -58,6 +58,21 @@ form {
   overflow-x: scroll;
   padding-bottom: 17px;
 }
+.error__output {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  height: auto;
+  background: #1b1b1b;
+  color: #ff0000;
+  font-size: 1vw;
+  text-align: center;
+  -webkit-box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
+}
 .box {
   width: 100vw;
   height: 100%;

@@ -6,35 +6,35 @@
 		$nickname = $_POST['nickname'];
 		if (strlen($nickname)<3 || strlen($nickname)>20) {
 			$register = false;
-			$_SESSION["err_nick"] = "Nickname powinien zawierac od 3 do 20 znakow !";
+			$_SESSION["err_nick"] = "Nickname powinien zawierac od 3 do 20 znakow. ";
 		}
 		if (ctype_alnum($nickname)==false) {
 			$register = false;
-			$_SESSION["err_nick"]= "Nickname powinien skladac sie z liter i cyfr (bez polskich znakow)!";
+			$_SESSION["err_nick"]= "Nickname powinien skladac sie z liter i cyfr (bez polskich znakow). ";
 		}
 		//Prawdzanie emaila
 		$email = $_POST['email'];
 		$rEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
 		if (filter_var($rEmail, FILTER_VALIDATE_EMAIL)==false || ($rEmail != $email)) {
 			$register = false;
-			$_SESSION["err_email"] = "Podaj poprawny adres email !";
+			$_SESSION["err_email"] = "Podaj poprawny adres email. ";
 		}
 		//Sprawdzanie hasla
 		$password = $_POST['password'];
 		$repass = $_POST['repassword'];
 		if(strlen($password)<8 || strlen($password)>20) {
 			$register = false;
-			$_SESSION["err_pass"]= "Haslo powinno zawierac od 8 do 20 znakow !";
+			$_SESSION["err_pass"]= "Haslo powinno zawierac od 8 do 20 znakow. ";
 		}
 		if($password!=$repass) {
 			$register = false;
-			$_SESSION["err_pass"] = "Hasla nie sa identyczne !";
+			$_SESSION["err_pass"] = "Hasla nie sa identyczne. ";
 		}
 		$pass_hash = password_hash($password, PASSWORD_DEFAULT);
 		//akceptacja regulaminu
 		if(!isset($_POST['regulamin'])) {
 			$regster = false;
-			$_SESSION["err_regulamin"] = "Potwierdz akceptacje regulaminu !";
+			$_SESSION["err_regulamin"] = "Potwierdz akceptacje regulaminu. ";
 		}
 		//Recaptcha
 		$captchasecret = "6Le3dyEUAAAAAAd7nO_fgCVBI6j3Bh6AeWk2gyiH";
@@ -42,7 +42,7 @@
 		$answer = json_decode($check);
 		if ($answer->success==false) {
 			$register = false;
-			$_SESSION['err_captcha'] = "Potwierdz ze nie jestes robotem !";
+			$_SESSION['err_captcha'] = "Potwierdz ze nie jestes robotem. ";
 		}
 		require_once "dbconnect.php";
 		mysqli_report(MYSQLI_REPORT_STRICT);
@@ -59,7 +59,7 @@
 				$emailCount = $result->num_rows;
 				if ($emailCount > 0) {
 					$register = false;
-					$_SESSION["err_email"] = "Konto z podanym adresem e-mail juz istnieje !";
+					$_SESSION["err_email"] = "Konto z podanym adresem e-mail juz istnieje. ";
 				}
 				//czy nick juz istnieje
 				$result = $connect->query("SELECT ID FROM daneuzytkownikow WHERE USERNAME = '$nickname'");
@@ -69,7 +69,7 @@
 				$usernameCount = $result->num_rows;
 				if ($usernameCount > 0) {
 					$register = false;
-					$_SESSION["err_nick"] = "Konto z podanym nickiem juz istnieje !";
+					$_SESSION["err_nick"] = "Konto z podanym nickiem juz istnieje. ";
 				}
 				//Udana rejestracja
 				if ($register == true) {
@@ -87,7 +87,7 @@
 				$connect->close();
 			}
 		} catch(Exception $err) {
-			echo "Blad serwera, przepraszamy za niedogodnosci !";
+			echo "Blad serwera, przepraszamy za niedogodnosci";
 			echo '<br>Info Develop'.$err; 
 		}
 	}
@@ -107,18 +107,44 @@
     
     <body>
         <form method="post">
+			<div class="error__output">
+				<?php
+					if(isset($_SESSION["err_nick"])) {
+						echo $_SESSION["err_nick"];
+						unset($_SESSION["err_nick"]);
+					}
+				?>
+				<?php
+					if(isset($_SESSION["err_email"])) {
+						echo $_SESSION["err_email"];
+						unset($_SESSION["err_email"]);
+					}
+				?>
+				<?php
+					if(isset($_SESSION["err_pass"])) {
+						echo $_SESSION["err_pass"];
+						unset($_SESSION["err_pass"]);
+					}
+				?>
+				<?php
+					if(isset($_SESSION["err_captcha"])) {
+						echo $_SESSION["err_captcha"];
+						unset($_SESSION["err_captcha"]);
+					}
+				?>
+				<?php
+					if(isset($_SESSION["err_regulamin"])) {
+						echo $_SESSION["err_regulamin"];
+						unset($_SESSION["err_regulamin"]);
+					}
+				?>
+				</div>
 <!--               nick box-->
                <div class="box" id="n">
                <span class="nick">What's your nickname?</span>
                 <input  type="text" name="nickname" placeholder="Nazwa Użytkownika">
                    <a href="#email" class="next next_mod icon-right-open"></a>
 				   <div class="clear"></div>
-				<?php
-					if(isset($_SESSION["err_nick"])) {
-						echo $_SESSION["err_nick"].'<br>';
-						unset($_SESSION["err_nick"]);
-					}
-				?>
 				</div>
 <!--				e-mail box-->
                <div class="box" id="email">
@@ -129,23 +155,11 @@
                   <a href="#pass" class="next icon-right-open"></a>
 				  <div class="clear"></div>
 				</div>
-				<?php
-					if(isset($_SESSION["err_email"])) {
-						echo $_SESSION["err_email"].'<br>';
-						unset($_SESSION["err_email"]);
-					}
-				?>
 				</div>
 <!--               password box-->
                <div class="box" id="pass">
                    <span class="pass">What's your password?</span>
                 <input  type="password"  name="password" placeholder="Hasło">
-				<?php
-					if(isset($_SESSION["err_pass"])) {
-						echo $_SESSION["err_pass"].'<br>';
-						unset($_SESSION["err_pass"]);
-					}
-				?>
                 <input  type="password"  name="repassword" placeholder="Powtórz Hasło">
                    <div class="nav__holder">
                   	<a href="#email" class="back icon-left-open"></a>
@@ -161,19 +175,7 @@
 				    <input type="checkbox" name="regulamin"><span>Akceptuję Regulamin</span>
 				    </div>
 				    <div class="g-recaptcha captcha-mod" data-sitekey="6Le3dyEUAAAAAOn-qg0Dwc8omngvtdPO7w_hDT1f"></div>
-				        <?php
-					if(isset($_SESSION["err_captcha"])) {
-						echo $_SESSION["err_captcha"].'<br>';
-						unset($_SESSION["err_captcha"]);
-					}
-				        ?>
 				</div> 
-				<?php
-					if(isset($_SESSION["err_regulamin"])) {
-						echo $_SESSION["err_regulamin"].'<br>';
-						unset($_SESSION["err_regulamin"]);
-					}
-				?>
                 <input type="submit" value="Zarejestruj" class="button-mod">
                 <a href="#n" class="back back_mod icon-left-open"></a>
 				</div>
