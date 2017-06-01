@@ -140,17 +140,17 @@
                <div class="box" id="pass">
                    <span class="pass">What's your password?</span>
                 <input  type="password"  name="password" placeholder="Hasło">
+                <input  type="password"  name="repassword" placeholder="Powtórz Hasło">
+                   <div class="nav__holder">
+                  	<a href="#email" class="back icon-left-open"></a>
+                  	<a href="#check" class="next icon-right-open"></a>
+				 	<div class="clear"></div>
 				<?php
 					if(isset($_SESSION["err_pass"])) {
 						echo $_SESSION["err_pass"].'<br>';
 						unset($_SESSION["err_pass"]);
 					}
 				?>
-                <input  type="password"  name="repassword" placeholder="Powtórz Hasło">
-                   <div class="nav__holder">
-                  	<a href="#email" class="back icon-left-open"></a>
-                  	<a href="#check" class="next icon-right-open"></a>
-				 	<div class="clear"></div>
 				</div>
                 </div>
                 <!--Checking part -->
@@ -161,21 +161,20 @@
 				    <input type="checkbox" name="regulamin"><span>Akceptuję Regulamin</span>
 				    </div>
 				    <div class="g-recaptcha captcha-mod" data-sitekey="6Le3dyEUAAAAAOn-qg0Dwc8omngvtdPO7w_hDT1f"></div>
-				        <?php
-					if(isset($_SESSION["err_captcha"])) {
-						echo $_SESSION["err_captcha"].'<br>';
-						unset($_SESSION["err_captcha"]);
-					}
-				        ?>
 				</div> 
-				<?php
-					if(isset($_SESSION["err_regulamin"])) {
-						echo $_SESSION["err_regulamin"].'<br>';
-						unset($_SESSION["err_regulamin"]);
-					}
-				?>
                 <input type="submit" value="Zarejestruj" class="button-mod">
                 <a href="#n" class="back back_mod icon-left-open"></a>
+				<?php
+					if(isset($_SESSION["err_regulamin"])) {
+						echo $_SESSION["err_regulamin"]." ";
+						unset($_SESSION["err_regulamin"]);
+					}
+					if(isset($_SESSION["err_captcha"])) {
+						echo $_SESSION["err_captcha"];
+						unset($_SESSION["err_captcha"]);
+					}
+				?>
+				</div>
 				</div>
         </form>
         <div id="loader" class="">
