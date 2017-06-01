@@ -5,7 +5,7 @@
 <html lang="pl">
     <head>
         <title>Gierczak</title>
-        <link href="style3.css" rel="stylesheet">
+        <link href="css-less_files/style3.css" rel="stylesheet">
     </head>
     <body>
 <?php
