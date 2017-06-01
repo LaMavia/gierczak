@@ -14,7 +14,7 @@
         <title> Gierczak </title>
         
         
-        <link href="style.css" rel="stylesheet" />
+        <link href="css-less_files/style.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua" rel="stylesheet"> 
     </head>
     
@@ -40,7 +40,7 @@
         }
 ?>
    </div>
-   <script src="scripts.js"></script>
+   <script src="js_files/scripts.js"></script>
     </body>
 
 </html>

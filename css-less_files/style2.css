@@ -58,6 +58,7 @@ form {
   overflow-x: scroll;
   padding-bottom: 17px;
 }
+<<<<<<< HEAD:style2.css
 .error__output {
   position: fixed;
   top: 0;
@@ -73,6 +74,8 @@ form {
   -moz-box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
 }
+=======
+>>>>>>> ba7b061d59a133afab9279cedd8c81ddc8f219d0:css-less_files/style2.css
 .box {
   width: 100vw;
   height: 100%;

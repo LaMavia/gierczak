@@ -25,7 +25,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title> Gierczak </title>
         
-        <link href="style3.css" rel="stylesheet" />
+        <link href="css-less_files/style3.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua" rel="stylesheet"> 
     </head>
     
