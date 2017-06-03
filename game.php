@@ -20,15 +20,10 @@ echo "Witaj ".$_SESSION["username"];
 				<div class="points">Points: 0</div>
 				
 			</div>
-			<div class="log"></div>
 				<input type="number"></input>
 				<div class="guess">Guess</div>
 				<div class="hint">Hint</div>
 						<?php
-						//Hint
-						if(isset($_SESSION["message"])) {
-						echo '<div id="hint">'.$_SESSION["message"]."</div>"; 
-						}
 						//Wynik
 						if (isset($_SESSION["points"])) {
 						 	if (!isset($_SESSION["pointget"])) {
