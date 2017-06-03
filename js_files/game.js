@@ -241,7 +241,7 @@ var multi = 1;
 var pps = 0;
 var hintOutput = $('div.hint');
 
-alert(numberToGuess);
+alert(numberToGuess); //dev help
 
 function numberGuesser(){
     var getButton = $('div.guess');
@@ -252,8 +252,10 @@ function numberGuesser(){
         var pointsOutput = $('div.points');
 
         function HintShowHide(){
-            hintOutput.slideUp(200).delay(100).slideDown(200).delay(5000).slideUp(200);
+            hintOutput.slideUp(200).delay(100).slideDown(200).delay(2000).slideUp(200);
         }
+        var numberPattern = /^\d+$/;
+        var diff_1 = numberToGuess - number;
 
         if(number == numberToGuess){
             $('div.hint').html('You Guessed a number');
@@ -268,31 +270,30 @@ function numberGuesser(){
                     numberToGuess = numberToGuess - (numberToGuess - n2);
                 }
                 else {numberToGuess = numberToGuess};
-            alert(numberToGuess);
+            alert(numberToGuess); //Dev help
         }
-        else if (number > numberToGuess){
-            if (numberToGuess - number <= 15){
-                hintOutput.html('Bit too much');
-                HintShowHide();
-            }
-            else if (numberToGuess - number > 15 && numberToGuess - number < 40){
-                hintOutput.html('Too much');
-                HintShowHide();
-            }
-            else if (numberToGuess - number > 40){
-                hintOutput.html('Way too much');
-                HintShowHide();
-            }
-            else{
-                alert('ERROR, Sorry');
-            }
+            else if (number > numberToGuess){
+                if(number - numberToGuess < 40){
+                    if (number - numberToGuess < 10){
+                        hintOutput.html('Bit too much');
+                        HintShowHide();
+                    }
+                    else if (number - numberToGuess >=10){
+                        hintOutput.html('Too much');
+                        HintShowHide();
+                    }
+                }
+                    else if (number - numberToGuess > 40){
+                        hintOutput.html('Way too much');
+                        HintShowHide();
+                    }
+                    else{
+                        alert('ERROR, Sorry');
+                    }
         }
         else if (number < numberToGuess){
             hintOutput.html('Bit More');
             HintShowHide();
-        }
-        else if (number = ' '){
-            hintOutput.html('Please type in a number');
         }
         else{
             alert('Number check Error');
