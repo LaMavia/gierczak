@@ -23,11 +23,8 @@ body {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
-<<<<<<< HEAD:style.css
   background: url(images/bg.jpg);
-=======
   background: url("pictures/bg.jpg");
->>>>>>> ba7b061d59a133afab9279cedd8c81ddc8f219d0:css-less_files/style.css
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;

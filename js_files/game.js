@@ -19,15 +19,6 @@ function odliczanie() {
 		setTimeout("odliczanie()" , 1000);
 	}   
 
-function menu(){
-    
-    if ( document.querySelector("#menu").classList.contains("hid" || "undefined") ){
-        document.querySelector("#menu").className = "show";
-    }
-    else {
-        document.querySelector("#menu").className = "hid";
-    }
-}
 
 function start()
 {
@@ -238,60 +229,6 @@ function upPts(){
 
 shop();
 numberGuesser();
-//Clicker
-//var getClicker = document.querySelector('span#clicker');
-//
-//function clicker(){
-//    getClicker.addEventListener('click', changeText);
-//}
-//function changeText(){
-//    getClicker.className += ' clicked';
-//    setTimeout(function(){
-//        getClicker.classList.remove('clicked');
-//    },100);
-//}
-
-//Attribute list
-//function attribute(){
-//    var getList = document.querySelector('ul.welcome-list');
-//    getList.addEventListener('click', showList);
-//}
-//function showList(){
-//    var getLi = document.querySelector('ul.welcome-list > li');
-//    if (getLi.className === 'h'){
-//        getLi.className = 's';
-//    }
-//    else {getLi.className = 'h';}
-//}
-//function attsave(){
-//    var getLi = document.querySelector('ul.welcome-list');
-//    
-//    var offset = getLi.offsetLeft;
-//    getLi.addEventListener('DOMContentLoaded', function(){
-//        if (offset = 0){
-//        showList;
-//    }
-//    });
-//    
-//}
-
-
-//function clickerAddClass(){
-//    
-//    var randomColor = "#" + ((1<<24)*Math.random()|0).toString(16);
-//    document.documentElement.style.setPrototypeOf('main-color', randomColor);
-//    
-//    if (getClicker.className ==='clicked'){
-//        getClicker.className ='';
-//    }
-//    else {
-//    getClicker.className = 'clicked';
-//    }
-//    
-//}
-//attsave();
-//attribute();
-//clicker();
 
 
 

@@ -12,26 +12,34 @@
 echo "Witaj ".$_SESSION["username"];
 ?>
         <form class="box__main" action="sprawdz.php" method="post">
-			<input type="number"></input>
+			<div class="menu__box">
+				<div class="usr_box">
+					<div class="save"><a href="save.php">Save</a></div>
+					<?php echo '<div class="logout"><a href="logout.php">Logout</a></div>'; ?>
+				</div>
+				<div class="points">Points: 0</div>
+				
+			</div>
+			<div class="log"></div>
+				<input type="number"></input>
+				<div class="guess">Guess</div>
+				<div class="hint">Hint</div>
+						<?php
+						//Hint
+						if(isset($_SESSION["message"])) {
+						echo '<div id="hint">'.$_SESSION["message"]."</div>"; 
+						}
+						//Wynik
+						if (isset($_SESSION["points"])) {
+						 	if (!isset($_SESSION["pointget"])) {
+								$_SESSION["pointget"] = 0;
+							}
+							$score = $_SESSION["points"]+$_SESSION["pointget"];
+							echo $score;
+						}
+						?>
         </form>
-		<div id="save"><a href="save.php">Save</a></div>
-
-
-		<?php
-	//hint
-	if(isset($_SESSION["message"])) {
-		echo '<div id="hint">'.$_SESSION["message"]."</div>"; 
-	}	
-	echo '<div id="wyloguj"><a href="logout.php">Logout</a></div>';
-	//your score
-	if (isset($_SESSION["points"])) {
-		if (!isset($_SESSION["pointget"])) {
-			$_SESSION["pointget"] = 0;
-		}
-		$score = $_SESSION["points"]+$_SESSION["pointget"];
-		echo $score;
-	}
-?>
-	<script src="game.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js_files/game.js"></script>
     </body>
 </html>

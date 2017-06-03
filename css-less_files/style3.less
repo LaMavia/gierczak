@@ -11,18 +11,36 @@
 .mb(@mb) {margin-bottom: @mb};
 .cir(@s){width: @s;height: @s;border-radius: 50%;}
 .ontop{z-index: 500; position: @fx;}
-.anim{transition:all 1s ease;}
-.anim2{transition:all 0.2s ease;}
-.anim3{transition:all 0.1s ease;}
-.anim4{transition:all 0.5s ease;}
 .img-sizing(@bg) {  background: url(@bg) no-repeat center center fixed; 
   background-size: cover;}
+.anim{transition: 1s 0s ease-out;}
+.anim1a{transition: 1s 0.11s ease-out;}
+.anim1b{transition: 1s 0s ease-out;}
+.shadowbox1{-webkit-box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
+            box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);}
+.shadowbox2{    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
+.textshadow1{
+    text-shadow: -4px -4px 2px rgba(0, 0, 0, 0.75);
+}
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=Righteous');
 //Main
+*{
+  box-sizing: border-box;
+}
+
 body
 {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+}
+a{
+  text-decoration: none;
+  color: inherit;
 }
 
 .box{
@@ -35,5 +53,114 @@ body
     padding-bottom: 17px;
     width: 100vw;
     height: 100vw;
+    background-color: #ff9000;
+
+    input[type=number]{
+      width: 70vw;
+      height: 10vh;
+      margin-left: 15vw;
+      margin-right: 15vw;
+      margin-top: 45vh;
+      background-color: #1b1b1b;
+      color: #ffffff;
+      font-size: 2vw;
+      padding: 0 1vw;
+      border: 0px transparent none;
+    }
+    .guess{
+      width: 20vw;
+      height: 6vh;
+      margin-left: 40vw;
+      margin-right: 40vw;
+      margin-top: 1vh;
+      padding-top: 0.3vh;
+      text-align: center;
+      font-family: 'Righteous', cursive;
+      font-size: 2vw;
+      background-color: #1b1b1b; 
+      color: #ffffff;
+      cursor: pointer;
+      .anim;
+
+      &:hover{
+        color: #ff9000;
+        .anim;
+      }
+    }
+    .hint{
+        position: fixed;
+        bottom: 0;
+        left: 35vw;
+        width: 30vw;
+        height: auto;
+        background-color: #ffffff;
+        color: #1b1b1b;
+        font-size: 1.5vw;
+        text-align: center;
+        padding: 1vh 0;
+      }
+  }
+}
+
+.menu{
+  &__box{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: #ffffff;
+    color: #1b1b1b;
+    font-size: 3vw;
+    font-family: 'Righteous', cursive;
+    padding:1vh 1vw;
+    vertical-align: center;
+
+    *{
+      display: inline-flex;
+    }
+
+    .save{
+      margin-right: 1vw;
+      &:hover{
+        color: #00ffff;
+      }
+    }
+    .logout{
+      &:hover{
+        color: #ff9000;
+      }
+    }
+    .points{
+      .anim;
+      &:hover{
+        .anim;
+        color: #ff9000;
+      }
+    }
+    .usr_box{
+      position: absolute;
+      right: 1vw;
+
+      a{
+        .anim;
+        color: inherit;
+        
+        &:hover{
+          .anim;
+        }
+      }
+    }
+    .align_left{
+      position: relative;
+      left: 0;
+    }
+    .align_right{
+      position: relative;
+      right: 1vw;
+    }
+
+    .shadowbox1;
   }
 }
