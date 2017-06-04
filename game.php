@@ -5,6 +5,7 @@
 <html lang="pl">
     <head>
         <title>Gierczak</title>
+		<link href="css-less_files/normalize.css" rel="stylesheet">
         <link href="css-less_files/style3.css" rel="stylesheet">
     </head>
     <body>
@@ -23,6 +24,10 @@ echo "Witaj ".$_SESSION["username"];
 				<input type="number"></input>
 				<div class="guess">Guess</div>
 				<div class="hint">Hint</div>
+				<div class="shop">
+					<span class="icon-basket shop__icon"></span>
+					<div class="shop__box"></div>
+				</div>
 						<?php
 						//Wynik
 						if (isset($_SESSION["points"])) {

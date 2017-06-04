@@ -12,6 +12,12 @@
 .anim1b {
   transition: 1s 0s ease-out;
 }
+.anim2a {
+  transition: 0.3s 0.11s ease-in-out;
+}
+.anim2b {
+  transition: 0.3s 0s ease-in-out;
+}
 .shadowbox1 {
   -webkit-box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
@@ -91,6 +97,35 @@ a {
   text-align: center;
   padding: 1vh 0;
 }
+.box__main .shop {
+  width: auto;
+  height: auto;
+}
+.box__main .shop__icon {
+  position: fixed;
+  bottom: 0.5vw;
+  left: 0.5vw;
+  background-color: #ffffff;
+  color: #1b1b1b;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: 1s 0.11s ease-out;
+}
+.box__main .shop__icon:hover {
+  color: #ff9000;
+  transition: 1s 0s ease-out;
+}
+.box__main .shop__box {
+  position: fixed;
+  left: 0;
+  bottom: 3.5vw;
+  width: 15vw;
+  height: 82.5vh;
+  background: #ffffff;
+  z-index: 1;
+}
 .menu__box {
   display: flex;
   position: fixed;
@@ -130,6 +165,7 @@ a {
 .menu__box .usr_box {
   position: absolute;
   right: 1vw;
+  z-index: 20000;
 }
 .menu__box .usr_box a {
   transition: 1s 0s ease-out;

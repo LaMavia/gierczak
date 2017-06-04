@@ -16,6 +16,8 @@
 .anim{transition: 1s 0s ease-out;}
 .anim1a{transition: 1s 0.11s ease-out;}
 .anim1b{transition: 1s 0s ease-out;}
+.anim2a{transition: 0.3s 0.11s ease-in-out;}
+.anim2b{transition: 0.3s 0s ease-in-out;}
 .shadowbox1{-webkit-box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
             -moz-box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
             box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);}
@@ -99,6 +101,36 @@ a{
         text-align: center;
         padding: 1vh 0;
       }
+      .shop{
+        width: auto;
+        height: auto;
+        &__icon{
+          position: fixed;
+          bottom: 0.5vw;
+          left: 0.5vw;
+          background-color: #ffffff;
+          color: #1b1b1b;
+          width: 3vw;
+          height: 3vw;
+          border-radius: 50%;
+          overflow: hidden;
+          .anim1a; 
+
+          &:hover{
+            color: #ff9000;
+            .anim1b;
+          }
+        }
+        &__box{
+            position: fixed;
+            left: 0;
+            bottom: 3.5vw;
+            width: 15vw;
+            height: 82.5vh;
+            background: #ffffff;
+            z-index: 1;
+          }
+      }
   }
 }
 
@@ -142,6 +174,7 @@ a{
     .usr_box{
       position: absolute;
       right: 1vw;
+      z-index: 20000;
 
       a{
         .anim;

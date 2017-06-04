@@ -300,8 +300,10 @@ function numberGuesser(){
         }
     });
 
-
-    //shop
+}
+//shop
+function shop(){
+    
 }
 numberGuesser();
 });
