@@ -69,6 +69,21 @@ a{
       padding: 0 1vw;
       border: 0px transparent none;
     }
+    .welcome__text{
+      position: absolute;
+      left: 22.5vw;
+      top: 30vh;
+      width: auto;
+      color: #ffffff;
+      text-align: center;
+      font-size: 4vw;
+      .anim1a;
+
+      &:hover{
+        .anim1b;
+        .textshadow1;
+      }
+    }
     .guess{
       width: 20vw;
       height: 6vh;
@@ -105,10 +120,10 @@ a{
         width: auto;
         height: auto;
         &__icon{
-          position: fixed;
-          bottom: 0.5vw;
-          left: 0.5vw;
-          background-color: #ffffff;
+          position: absolute;
+          bottom: 0.2vh;
+          left: -32.5vw;
+          background-color: #1b1b1b;
           color: #1b1b1b;
           width: 3vw;
           height: 3vw;
@@ -124,11 +139,28 @@ a{
         &__box{
             position: fixed;
             left: 0;
-            bottom: 3.5vw;
-            width: 15vw;
-            height: 82.5vh;
+            bottom: 0;
+            width: 14vw;
+            height: 89.9vh;
             background: #ffffff;
             z-index: 1;
+            .shadowbox1;
+
+            div{
+              width: 100%;
+              height: 10%;
+              background-color: inherit;
+              color: #1b1b1b;
+              border: 2px solid transparent;
+              font-family: 'Righteous', cursive;
+              font-size: 130%;
+              text-align: center;
+              
+              &:hover{
+                border: 2px dashed #1b1b1b;
+              }
+            }
+
           }
       }
   }

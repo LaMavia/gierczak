@@ -232,6 +232,16 @@
 
 $(document).ready(function(){
 
+//block enter key
+var arrow_keys_handler = function(e) {
+    switch(e.keyCode){ 
+        case 17: e.preventDefault(); break;
+        default: break; // do not block other keys
+    }
+};
+    window.addEventListener("keydown", arrow_keys_handler, false);
+
+
 var n1 = 1;
 var n2 = 90;
 var numberToGuess = Math.round(Math.random() * (n2 - n1) + n1);
@@ -303,9 +313,41 @@ function numberGuesser(){
 }
 //shop
 function shop(){
-    
+    //events
+    $('span.shop__icon').on('click', shopShowHid);
+    //Hid box when page loads
+    $('div.shop__box').slideUp(0);
 }
+
+function shopShowHid(){
+    $('div.shop__box').slideToggle(500);
+}
+
+//saving NOT WORKING!!
+$('div.save').on('click', saving);
+
+function saving(){
+    //savin function
+    var usrId = $('span.usr__name');
+
+    var xhtmlUpload = $.ajax({
+        url: "json_files/scores.json",
+        method: "PUT",
+        data: {usrId : points},
+        dataType: "json"
+    });
+    xhtmlUpload.done(function(){
+        alert('Data saved');
+    });
+    xhtmlUpload.fail(function(){
+        alert('Something has gone wrong :(');
+    });
+
+}
+
+//Wywołania
 numberGuesser();
+shop();
 });
 
 
