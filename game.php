@@ -18,12 +18,12 @@ echo "Witaj ".$_SESSION["username"];
 				<div class="usr_box">
 					<div class="save"><a href="save.php">Save</a></div>
 					<div class="logout"><a href="logout.php">Logout</a></div> 
-					<span class="icon-basket shop__icon"></span>
+					<span class="shop__icon"></span>
 				</div>
 				<div class="points">Points: 0</div>
 				
 			</div>
-				<span class="welcome__text">Try to guess My Number ;)</span>
+				<span class="welcome__text">Try to guess My Number</span>
 				<input type="number"></input>
 				<div class="guess">Guess</div>
 				<div class="hint">Hint</div>
