@@ -74,6 +74,7 @@ a {
   color: #ffffff;
   text-align: center;
   font-size: 4vw;
+  font-family: 'Righteous', cursive;
   transition: 1s 0.11s ease-out;
 }
 .box__main .welcome__text:hover {
@@ -120,7 +121,7 @@ a {
   bottom: 0.2vh;
   left: -32.5vw;
   background-color: #1b1b1b;
-  color: #1b1b1b;
+  color: #ffffff;
   width: 3vw;
   height: 3vw;
   border-radius: 50%;
@@ -146,11 +147,12 @@ a {
 .box__main .shop__box div {
   width: 100%;
   height: 10%;
+  padding-top: 6%;
   background-color: inherit;
   color: #1b1b1b;
   border: 2px solid transparent;
   font-family: 'Righteous', cursive;
-  font-size: 130%;
+  font-size: 140%;
   text-align: center;
 }
 .box__main .shop__box div:hover {
@@ -211,4 +213,13 @@ a {
 .menu__box .align_right {
   position: relative;
   right: 1vw;
+}
+.dev__build {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-family: 'Righteous', cursive;
+  color: #1b1b1b;
+  opacity: 0.5;
+  font-size: 2rem;
 }
