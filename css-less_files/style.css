@@ -23,6 +23,7 @@ body {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+  background: url(images/bg.jpg);
   background: url("pictures/bg.jpg");
   background-attachment: fixed;
   background-position: center center;
