@@ -17,13 +17,11 @@ echo "Witaj ".$_SESSION["username"];
         <div class="box__main">
 			<div class="menu__box">
 				<div class="usr_box">
-					<div class="logout"><?php $shop = new Shoping;echo $shop->pointsFromBase; $shop->buyUbgrade(90); echo $shop->pointsInGame; ?> </div>
 					<div class="save"><a href="save.php">Save</a></div>
 					<div class="logout"><a href="logout.php">Logout</a></div>
 					<span class="shop__icon"></span>
 				</div>
-				<div class="points">Points: 0</div>
-				
+				<div class="points">Points: 0 In DB: <?php $shop = new Shopping; echo $shop->pointsFromBase;?></div>	
 			</div>
 				<span class="welcome__text">Try to guess My Number</span>
 				<input type="number"></input>

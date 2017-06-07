@@ -1,10 +1,11 @@
 <?php
-    class Shoping
+    class Shopping
     {
         //variables
         public $pointsFromBase;
-        private $pointsInGame = 100;
-        private $upgradeLvl;
+        public $pointsInGame = 100;
+        public $upgradeLvl;
+        private $maxUpgradeLvl;
         //functions
         public function __construct()
         {
@@ -13,7 +14,14 @@
         public function buyUbgrade($upgradeCost)
         {
             $this->pointsInGame = $this->pointsInGame - $upgradeCost;
-            $this->upradeLvl++;
+            if($this->maxUpgradeLvl == 100)
+            {
+                echo "You achieved max lvl for this item !";
+            }
+            else
+            {
+                $this->upradeLvl = $this->upgradeLvl + 1;
+            }
         }
     }
 ?>
