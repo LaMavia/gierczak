@@ -34,6 +34,12 @@ function numberGuesser(){
     var getButton = $('div.guess');
     hintOutput.slideUp(0);
 
+    //devBuild
+    $('div.dev__build').on('click' , function(){
+        points = points + 90;
+        $('div.points').html('Points: '+points);
+    });
+
     getButton.on('click', function(){
         var number = $('input[type=number]').val();
         var pointsOutput = $('div.points');
@@ -104,7 +110,7 @@ function checkItem(){
             n2 = n2 + 70;
             multi = multi + 1;
             pointsForRange = pointsForRange*2;
-            $('div.shop__item[data-item="range"] > div.shop__box').html('Range: 1-'+n2);
+            $('div.shop__item[data-item="range"]').html('Range: 1-'+n2);
         }
         else{
             hintOutput.html('Not enough points');
@@ -117,13 +123,20 @@ function checkItem(){
         if(points >= pointsForPps){
             pps = pps + 0.3;
             pointsForPps = pointsForPps*2;
-            $('div.shop__item[data-item="pps"] > div.shop__box').html('Points/sec: '+pps);
+            $('div.shop__item[data-item="pps"]').html('Points/sec: '+pps);
+            pointsPerSec();
         }
         else{
             hintOutput.html('Not enough points');
             HintShowHide();
         }
     }
+}
+
+function pointsPerSec(){
+    points = points + pps;
+    $('div.points').html('Points: '+points);
+    setTimeout( pointsPerSec , 1000);
 }
 
 function shopShowHid(){
