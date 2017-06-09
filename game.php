@@ -11,19 +11,25 @@
 		<link href="css/fontello.css" rel="stylesheet">
     </head>
     <body>
-<?php
-echo "Witaj ".$_SESSION["username"];
-?>
         <div class="box__main">
 			<div class="menu__box">
 				<div class="usr_box">
-					<div class="save"><a href="save.php">Save</a></div>
+					<div class="save">Save</div>
 					<div class="logout"><a href="logout.php">Logout</a></div>
 					<span class="shop__icon"></span>
 				</div>
-				<div class="points">Points: 0 In DB: <?php $shop = new Shopping; echo $shop->pointsFromBase;?></div>	
+				<div class="points">Points: 0</div>	
 			</div>
-				<span class="welcome__text">Try to guess My Number</span>
+				<span class="welcome__text">
+						<?php
+						if (isset($_SESSION["username"])){
+							echo "Hi <span class='nick'>".$_SESSION["username"]."</span>";
+						}
+						if (empty($_SESSION["username"])){
+							echo "Hi Guest";
+						}
+						?>
+						<br>Try to guess My Number</span>
 				<input type="number"></input>
 				<div class="guess">Guess</div>
 				<div class="hint">Hint</div>
@@ -35,7 +41,12 @@ echo "Witaj ".$_SESSION["username"];
 				</div>
 				<div class="dev__build">DevBuild</div>
         </div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="js_files/game.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+	<script src="js_files/game.js">
+		points = '<?php $shop = new Shopping; echo $shop->pointsFromBase;?>'
+		$('div.points').html(points);
+	</script>
     </body>
 </html>

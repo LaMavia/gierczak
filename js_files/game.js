@@ -143,32 +143,61 @@ function shopShowHid(){
     $('div.shop__box').slideToggle(500);
 }
 
-//saving NOT WORKING!!
-$('div.save').on('click', saving);
+//saving NOT WORKING!! Yet
+var $nick = $('span.nick'); 
+var $scores = points;
+var range = n2;
+var $upgrades = [
+    {
+        range,
+        pps,
+        multi
+    }
+];
 
-function saving(){
+$('div.save').on('click',function (){
+
+    var save = {
+        nick: $nick.html(),
+        scores: $scores,
+        upgrades: $upgrades
+    };
+
     //savin function
-    var usrId = $('span.usr__name');
-
-    var xhtmlUpload = $.ajax({
-        url: "json_files/scores.json",
-        method: "PUT",
-        data: {usrId : points},
-        dataType: "json"
-    });
-    xhtmlUpload.done(function(){
-        alert('Data saved');
-    });
-    xhtmlUpload.fail(function(){
-        alert('Something has gone wrong :(');
+    $.ajax({
+        url: "./json_files/scores.json",
+        type: "POST",
+        data: save,
+        success: function(){
+            alert('Data saved');
+            console.log(save);
+        },
+        error: function(){
+            alert('You fucked up mate :(');
+        }
     });
 
-}
+});
 
 //Wywołania
 numberGuesser();
 shop();
 });
 
+$(function (){
+    $.ajax({
+        type: 'GET',
+        url: './json_files/scores.json',
+        success: function(data){
+            data = $.parseJSON(data);
+            $.each(data, function(i, save){
+                console.log(save);
+            });
+        },
+        error: function(){
+            alert('Error Ajax');
+        }
+    });
 
-    
+
+});

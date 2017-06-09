@@ -1,0 +1,24 @@
+[
+   {
+      "nick":"Will",
+      "scores":21,
+      "upgrades":[
+         {
+            "range":180,
+            "pps":0.6,
+            "multi":1
+         }
+      ]
+   },
+   {
+      "nick":"Nick",
+      "scores":12,
+      "upgrades":[
+         {
+            "range":90,
+            "pps":0.3,
+            "multi": 0
+         }
+      ]
+   }
+]

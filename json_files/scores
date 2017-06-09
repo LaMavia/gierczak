@@ -1,0 +1,23 @@
+[
+    - {
+        "id":1,
+        "nick":"will",
+        "scores": 12,
+        "upgrades": [
+            {
+                "range": 180,
+                "pps": 0.6
+            }
+        ]
+    },
+    - {
+        "nick":"will",
+        "scores": 12,
+        "upgrades": [
+            {
+                "range": 90,
+                "pps": 0.3
+            }
+        ]
+    }
+]

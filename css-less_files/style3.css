@@ -69,13 +69,14 @@ a {
 .box__main .welcome__text {
   position: absolute;
   left: 25vw;
-  top: 30vh;
+  top: 22.5vh;
   width: auto;
   color: #ffffff;
   text-align: center;
   font-size: 4vw;
   font-family: 'Righteous', cursive;
   font-weight: 600;
+  text-transform: capitalize;
   transition: 1s 0.11s ease-out;
 }
 .box__main .welcome__text:hover {
