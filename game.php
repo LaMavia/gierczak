@@ -14,7 +14,7 @@
         <div class="box__main">
 			<div class="menu__box">
 				<div class="usr_box">
-					<div class="save">Save</div>
+					<div href="save.php" class="save">Save</div>
 					<div class="logout"><a href="logout.php">Logout</a></div>
 					<span class="shop__icon"></span>
 				</div>
