@@ -30,8 +30,13 @@
     </head>
     
     <body>
-		Dziekujemy za rejestracje w serwisie! Mozesz juz zalogowac sie na swoje konto!<br><br>
-		<a href="index.php">Zaloguj sie na swoje konto !</a>
-    </body>
+		<div class="main">
+			<div class="main__text">
+				Dziekujemy za rejestracje w serwisie<br>
+				Mozesz juz zalogowac sie na swoje konto
+			</div>
+			<a class="main__button" href="index.php">Zaloguj sie na swoje konto</a>
+		</div>
+	</body>
 
 </html>

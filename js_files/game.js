@@ -179,15 +179,17 @@ var $upgrades = [
 
 $('div.save').on('click',function (){
 
-    var save = {
-        nick: $nick.html(),
-        scores: $scores,
-        upgrades: $upgrades
-    };
+var save =[
+    "<?php",
+    "$_SESSION['nick'] ="+$nick,
+    "$_SESSION['scores'] ="+$scores,
+    "$_SESSION['upgrades'] ="+$upgrades,
+    "?>"
+]; 
 
     //Save to DB
     $.ajax({
-        url: "./json_files/scores.json",
+        url: "process.php",
         type: "POST",
         data: save,
         async: false,
