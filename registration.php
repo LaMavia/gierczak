@@ -52,7 +52,7 @@
 				throw new Exception(mysqli_connect_errno());
 			}else {
 				//czy email juz istnieje
-				$result = $connect->query("SELECT ID FROM daneuzytkownikow WHERE EMAIL = '$email'");
+				$result = $connect->query("SELECT ID FROM users WHERE EMAIL = '$email'");
 				if (!$result) {
 					throw new Exception($connect->error);
 				}
@@ -62,7 +62,7 @@
 					$_SESSION["err_email"] = "Konto z podanym adresem e-mail juz istnieje !";
 				}
 				//czy nick juz istnieje
-				$result = $connect->query("SELECT ID FROM daneuzytkownikow WHERE USERNAME = '$nickname'");
+				$result = $connect->query("SELECT ID FROM users WHERE USERNAME = '$nickname'");
 				if (!$result) {
 					throw new Exception($connect->error);
 				}
@@ -75,9 +75,9 @@
 				if ($register == true) {
 					$ester_egg="ester_egg";
 					$pointsstart="0";
-					$ap="0";
-					$less = "0";
-					if($connect->query("INSERT INTO daneuzytkownikow VALUES (NULL, '$nickname', '$pass_hash', '$ester_egg','$email', '$pointsstart', '$ap','$less')")) {
+					$pps="0";
+					$multi = "1";
+					if($connect->query("INSERT INTO users VALUES (NULL, '$nickname', '$pass_hash' ,'$email', '$pointsstart', '$pps','$multi')")) {
 						$_SESSION["successregister"] = true;
 						header('location: welcome.php');
 					}else {

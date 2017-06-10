@@ -21,7 +21,7 @@
 			//zabespieczanie przed SQL injection
 			$login = htmlentities($login,ENT_QUOTES,"UTF-8");
 			//piszemy i sprawdzamy poprawnosc zapytania i dodatkowo zabezpieczamy skrypt
-			if($result=@$connection->query(sprintf("SELECT * FROM daneuzytkownikow WHERE USERNAME='%s'",
+			if($result=@$connection->query(sprintf("SELECT * FROM users WHERE USERNAME='%s'",
 			mysqli_real_escape_string($connection,$login)))) {
 				$usersCount = $result->num_rows;
 				//sprawdzamy poprawnosc danych logowania do strony
@@ -34,6 +34,8 @@
 						$_SESSION["username"] = $row['USERNAME'];
 						$_SESSION["email"] = $row['EMAIL'];
 						$_SESSION["points"] = $row['POINTS'];
+						$_SESSION["pps"] = $row['PPS'];
+						$_SESSION["multi"] = $row['MULTI'];
 						//czyscimy zapytanie
 						unset($_SESSION["niezalogowano"]);
 						$result->close();

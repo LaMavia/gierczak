@@ -18,22 +18,22 @@
         <div class="box__main">
 			<div class="menu__box">
 				<div class="usr_box">
-					<div class="save">Save</div>
+					<div class="save"><a href="save.php">Save</a></div>
 					<div class="logout"><a href="logout.php">Logout</a></div>
 					<span class="shop__icon"></span>
 				</div>
 				<div class="points">Points: 0</div>	
 			</div>
 				<span class="welcome__text">
-						<?php
+					<?php
 						if (isset($_SESSION["username"])){
 							echo "Hi <span class='nick'>".$_SESSION["username"]."</span>";
 						}
 						if (empty($_SESSION["username"])){
 							echo "Hi Guest";
 						}
-						?>
-						<br>Try to guess My Number</span>
+					?>
+					<br>Try to guess My Number</span>
 				<input type="number"></input>
 				<div class="guess">Guess</div>
 				<div class="hint">Hint</div>
