@@ -30,7 +30,7 @@
 						}
 						?>
 						<br>Try to guess My Number</span>
-				<input type="number"></input>
+				<input min="0" type="number"></input>
 				<div class="guess">Guess</div>
 				<div class="hint">Hint</div>
 				<div class="shop">

@@ -109,8 +109,10 @@ function checkItem(){
         if(points >= pointsForRange){
             n2 = n2 + 70;
             multi = multi + 1;
+            points = points - pointsForRange;
             pointsForRange = pointsForRange*2;
             $('div.shop__item[data-item="range"]').html('Range: 1-'+n2);
+            $('div.points').html('Points: '+points);
         }
         else{
             hintOutput.html('Not enough points');
@@ -122,8 +124,10 @@ function checkItem(){
     else if (type === 'pps'){
         if(points >= pointsForPps){
             pps = pps + 0.3;
+            points = points - pointsForPps;
             pointsForPps = pointsForPps*2;
             $('div.shop__item[data-item="pps"]').html('Points/sec: '+pps);
+            $('div.points').html('Points: '+points);
             pointsPerSec();
         }
         else{
@@ -154,40 +158,13 @@ var $upgrades = [
         multi
     }
 ];
-
-$('div.save').on('click',function (){
-
-    var save = {
-        nick: $nick.html(),
-        scores: $scores,
-        upgrades: $upgrades
-    };
-
-    //savin function
-    $.ajax({
-        url: "./json_files/scores.json",
-        type: "POST",
-        data: save,
-        success: function(){
-            alert('Data saved');
-            console.log(save);
-        },
-        error: function(){
-            alert('You fucked up mate :(');
-        }
-    });
-
-});
-
-//Wywołania
-numberGuesser();
-shop();
-});
-
-$(function (){
+//Read from DB
+    function getData(){
     $.ajax({
         type: 'GET',
         url: './json_files/scores.json',
+        async: false,
+        cache: false,
         success: function(data){
             data = $.parseJSON(data);
             $.each(data, function(i, save){
@@ -198,6 +175,42 @@ $(function (){
             alert('Error Ajax');
         }
     });
+}
 
+$('div.save').on('click',function (){
+
+    var save = {
+        nick: $nick.html(),
+        scores: $scores,
+        upgrades: $upgrades
+    };
+
+    //Save to DB
+    $.ajax({
+        url: "./json_files/scores.json",
+        type: "POST",
+        data: save,
+        async: false,
+        cache: false,
+        success: function(){
+            alert('Data saved');
+            console.log(save);
+            getData();
+        },
+        error: function(){
+            alert('You fucked up mate :(');
+        }
+    });
+
+});
+getData();
+
+//Wywołania
+numberGuesser();
+shop();
+});
+
+$(function (){
+    
 
 });
