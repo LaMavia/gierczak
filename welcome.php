@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	 session_start();
 	if(isset($_SESSION["successregister"])) {
 		header('location: index.php');
 		exit();
@@ -15,7 +15,11 @@
 	if(isset($_SESSION["err_email"])) unset($_SESSION["err_email"]);
 	if(isset($_SESSION["err_regulamin"])) unset($_SESSION["err_regulamin"]);
 	if(isset($_SESSION["err_captcha"])) unset($_SESSION["err_captcha"]);
-	
+	$json = file_get_contents("json_files/scores.json");
+	$obj = json_decode($json, true);
+	$nick = $obj[0]["nick"];
+	$points = $obj[0]["scores"];
+	echo $points; 
 ?>
 
 <!DOCTYPE HTML>

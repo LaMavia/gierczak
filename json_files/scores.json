@@ -1,5 +1,5 @@
 [
-   {
+{
       "nick":"Will",
       "scores":21,
       "upgrades":[
@@ -20,5 +20,5 @@
             "multi": 0
          }
       ]
-   }
+}
 ]

@@ -1,4 +1,5 @@
 <?php
+
 	session_start();
 	if(!isset($_SESSION['loggined'])&&($_SESSION['loggined']==true)) {
 		header('location: index.php');

@@ -1,6 +1,10 @@
 <?php
 	session_start();
 	require_once "shop.php";
+	$json = file_get_contents("json_files/scores.json");
+	$obj = json_decode($json, true);
+	$nick = $obj[0]["nick"];
+	$points = $obj[0]["scores"];
 ?>
 <!DOCTYPE HTML>
 <html lang="pl">
