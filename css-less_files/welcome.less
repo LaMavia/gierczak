@@ -1,0 +1,66 @@
+//Sets
+.shadowbox1{-webkit-box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
+            box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);}
+.shadowbox2{    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
+.textshadow1{
+    text-shadow: -4px -4px 2px rgba(0, 0, 0, 0.75);
+}
+//Import
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+//Classes
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+//For phone
+ @media (max-width: 599px){
+body{
+    background-color:#2b2b2b;
+    width: 100vw;
+    height: 100vh;
+    overflow:hidden;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 60vw;
+    height: 100vh;
+    margin:auto;
+    .shadowbox1;
+    overflow: hidden;
+
+
+    &__text{
+        width: 100%;
+        height: 80vh;
+        padding-top: 10vh;
+        background: #fff;
+        color: #1b1b1b;
+        text-align: center;
+        font-size: 8vw;
+        padding: 2vw;
+        padding-top: 5vh;
+    }
+    &__button{
+        display: block;
+        width: 100%;
+        height: 20vh;
+        background: #ffbf00;
+        color: #1b1b1b;
+        text-align: center;
+        font-size: 7vw;
+        padding: 3.5vw;
+        text-decoration: none;
+
+        &:hover{
+        .shadowbox1;
+        }
+    }
+}
+}

@@ -18,7 +18,11 @@
         <div class="box__main">
 			<div class="menu__box">
 				<div class="usr_box">
+<<<<<<< HEAD
 					<div class="save"><a href="save.php">Save</a></div>
+=======
+					<div href="save.php" class="save">Save</div>
+>>>>>>> 73bef4ab73662155d5107ff9a4676d893ccafa8a
 					<div class="logout"><a href="logout.php">Logout</a></div>
 					<span class="shop__icon"></span>
 				</div>
@@ -32,9 +36,15 @@
 						if (empty($_SESSION["username"])){
 							echo "Hi Guest";
 						}
+<<<<<<< HEAD
 					?>
 					<br>Try to guess My Number</span>
 				<input type="number"></input>
+=======
+						?>
+						<br>Try to guess My Number</span>
+				<input min="0" type="number"></input>
+>>>>>>> 73bef4ab73662155d5107ff9a4676d893ccafa8a
 				<div class="guess">Guess</div>
 				<div class="hint">Hint</div>
 				<div class="shop">

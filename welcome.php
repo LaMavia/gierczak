@@ -29,13 +29,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title> Gierczak </title>
         
-        <link href="css-less_files/style3.css" rel="stylesheet" />
+        <link href="css-less_files/welcome.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua" rel="stylesheet"> 
     </head>
     
     <body>
-		Dziekujemy za rejestracje w serwisie! Mozesz juz zalogowac sie na swoje konto!<br><br>
-		<a href="index.php">Zaloguj sie na swoje konto !</a>
-    </body>
+		<div class="main">
+			<div class="main__text">
+				Dziekujemy za rejestracje w serwisie<br>
+				Mozesz juz zalogowac sie na swoje konto
+			</div>
+			<a class="main__button" href="index.php">Zaloguj sie na swoje konto</a>
+		</div>
+	</body>
 
 </html>
