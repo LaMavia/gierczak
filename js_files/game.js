@@ -148,7 +148,7 @@ function shopShowHid(){
 }
 
 //saving NOT WORKING!! Yet
-var $nick = $('span.nick'); 
+var $nick = $('span.nick').html(); 
 var $scores = points;
 var range = n2;
 var $upgrades = [
@@ -189,7 +189,7 @@ var save =[
 
     //Save to DB
     $.ajax({
-        url: "process.php",
+        url: "save.php",
         type: "POST",
         data: save,
         async: false,
