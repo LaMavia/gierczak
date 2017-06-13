@@ -148,21 +148,12 @@ function shopShowHid(){
 }
 
 //saving NOT WORKING!! Yet
-var $nick = $('span.nick').html(); 
-var $scores = points;
-var range = n2;
-var $upgrades = [
-    {
-        range,
-        pps,
-        multi
-    }
-];
+
 //Read from DB
     function getData(){
     $.ajax({
         type: 'GET',
-        url: './json_files/scores.json',
+        url: 'save.php',
         async: false,
         cache: false,
         success: function(data){
@@ -179,6 +170,16 @@ var $upgrades = [
 
 $('div.save').on('click',function (){
 
+    var $nick = $('span.nick').html(); 
+var $scores = points;
+var range = n2;
+var $upgrades =
+    [
+        numbers = range,
+        pointsPerSec = pps,
+        multip = multi
+    ];
+
 var save =[
     "<?php",
     "$_SESSION['nick'] ="+$nick,
@@ -186,12 +187,13 @@ var save =[
     "$_SESSION['upgrades'] ="+$upgrades,
     "?>"
 ]; 
+var jsonString = JSON.stringify(save);
 
     //Save to DB
     $.ajax({
         url: "save.php",
         type: "POST",
-        data: save,
+        data: {data: jsonString},
         async: false,
         cache: false,
         success: function(){

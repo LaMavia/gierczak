@@ -19,7 +19,6 @@
 	$obj = json_decode($json, true);
 	$nick = $obj[0]["nick"];
 	$points = $obj[0]["scores"];
-	echo $points; 
 ?>
 
 <!DOCTYPE HTML>

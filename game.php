@@ -20,7 +20,7 @@
 				<div class="usr_box">
 					<div href="save.php" class="save">Save</div>
 					<div class="logout"><a href="logout.php">Logout</a></div>
-					<span class="shop__icon"></span>
+					<span class="shop__icon">^</span>
 				</div>
 				<div class="points">Points: 0</div>	
 			</div>
