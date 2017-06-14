@@ -125,7 +125,7 @@ a {
     bottom: 0.2vh;
     left: -32.5vw;
     background-color: #1b1b1b;
-    color: #ffffff;
+    color: transparent;
     width: 3vw;
     height: 3vw;
     border-radius: 50%;
@@ -135,7 +135,6 @@ a {
     transition: 1s 0.11s ease-out;
   }
   .box__main .shop__icon:hover {
-    color: #ff9000;
     transition: 0.3s 0.11s ease-in-out;
     border: 5px #ffffff dashed;
   }
@@ -245,23 +244,23 @@ a {
   }
   .box__main input[type=number] {
     width: 100vw;
-    height: 15vh;
-    margin-top: 35vh;
+    height: 22.5vh;
+    margin-top: 40vh;
     background-color: #1b1b1b;
     color: #ffffff;
-    font-size: 6vw;
+    font-size: 12vw;
     padding: 0 2.5vw;
     border: 0px transparent none;
     text-align: center;
   }
   .box__main .welcome__text {
     position: absolute;
-    left: 7vw;
-    top: 17vh;
+    left: -3vw;
+    top: 13vh;
     width: auto;
     color: #ffffff;
     text-align: center;
-    font-size: 7vw;
+    font-size: 9vw;
     font-family: 'Righteous', cursive;
     font-weight: 600;
     text-transform: capitalize;
@@ -272,11 +271,11 @@ a {
     text-shadow: -4px -4px 2px rgba(0, 0, 0, 0.75);
   }
   .box__main .guess {
-    width: 60vw;
+    width: 80vw;
     height: 20vh;
-    margin-left: 20vw;
-    margin-right: 40vw;
-    margin-top: 8vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 5vh;
     padding: 4vh;
     text-align: center;
     font-family: 'Righteous', cursive;
@@ -293,8 +292,8 @@ a {
   .box__main .hint {
     position: fixed;
     bottom: 0;
-    left: 20vw;
-    width: 60vw;
+    left: 0;
+    width: 100vw;
     height: auto;
     background-color: #ffffff;
     color: #1b1b1b;
@@ -313,7 +312,7 @@ a {
     background-color: #1b1b1b;
     color: #ffffff;
     width: 100vw;
-    height: 9vw;
+    height: 7vh;
     overflow: hidden;
     text-align: center;
     font-size: 10vh;
@@ -328,9 +327,9 @@ a {
   .box__main .shop__box {
     position: fixed;
     left: 0;
-    bottom: 0;
+    bottom: 9vw;
     width: 100vw;
-    height: 89.9vh;
+    height: 82.9vh;
     background: #ffffff;
     z-index: 1;
     -webkit-box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
