@@ -252,6 +252,214 @@ a{
   }
 }
 }
+//Tablet-big
+@media (min-width: 900px) and (max-width: 1199px){
+.box{
+  &__main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -17px;
+    padding-bottom: 17px;
+    width: 100vw;
+    height: 100vw;
+    background-color: #fd9000;
+
+    input[type=number]{
+      width: 70vw;
+      height: 15vh;
+      margin-left: 15vw;
+      margin-right: 15vw;
+      margin-top: 40vh;
+      background-color: #1b1b1b;
+      color: #ffffff;
+      font-size: 5vw;
+      padding: 0 1vw;
+      border: 0px transparent none;
+      text-align: center;
+    }
+    .welcome__text{
+      position: absolute;
+      left: 14vw;
+      top: 17.5vh;
+      width: auto;
+      color: #ffffff;
+      text-align: center;
+      font-size: 6vw;
+      font-family: 'Righteous', cursive;
+      font-weight: 600;
+      text-transform: capitalize;
+      .anim1a;
+
+      &:hover{
+        .anim1b;
+        .textshadow1;
+      }
+    }
+    .guess{
+      width: 35vw;
+      height: 8vh;
+      margin-left: 32.5vw;
+      margin-right: 32.5vw;
+      margin-top: 1.5vh;
+      padding-top: 0.8vh;
+      text-align: center;
+      font-family: 'Righteous', cursive;
+      font-size: 3.8vw;
+      background-color: #1b1b1b; 
+      color: #ffffff;
+      cursor: pointer;
+      .anim;
+
+      &:hover{
+        color: #ff9000;
+        .anim;
+      }
+    }
+    .hint{
+        position: fixed;
+        bottom: 0;
+        left: 30vw;
+        width: 40vw;
+        height: auto;
+        background-color: #ffffff;
+        color: #1b1b1b;
+        font-size: 3vw;
+        text-align: center;
+        padding: 1vh 0;
+      }
+//SHOP
+      .shop{
+        width: auto;
+        height: auto;
+        &__icon{
+          position: absolute;
+          bottom: -0.2vh;
+          left: -22.5vw;
+          background-color: #1b1b1b;
+          color: transparent;
+          width: 6vw;
+          height: 6vw;
+          border-radius: 50%;
+          border: 2px transparent solid;
+          overflow: hidden;
+          text-align: center;
+          .anim1a; 
+
+          &:hover{
+            .anim2a;
+            border: 5px #ffffff dashed;
+          }
+        }
+        &__box{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 28vw;
+            height: 89.9vh;
+            background: #ffffff;
+            z-index: 1;
+            .shadowbox1;
+
+            div{
+              width: 100%;
+              height: 10%;
+              padding-top: 6%;
+              background-color: inherit;
+              color: #1b1b1b;
+              border: 2px solid transparent;
+              font-family: 'Righteous', cursive;
+              font-size: 140%;
+              text-align: center;
+
+              
+              &:hover{
+                border: 2px dashed #1b1b1b;
+              }
+            }
+
+          }
+      }
+  }
+}
+
+.menu{
+  &__box{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: #ffffff;
+    color: #1b1b1b;
+    font-size: 5vw;
+    font-family: 'Righteous', cursive;
+    padding:1vh 1vw;
+    vertical-align: center;
+
+    *{
+      display: inline-flex;
+    }
+
+    .save{
+      margin-right: 1vw;
+      &:hover{
+        color: #00ffff;
+      }
+    }
+    .logout{
+      &:hover{
+        color: #ff9000;
+      }
+    }
+    .points{
+      .anim;
+      &:hover{
+        .anim;
+        color: #ff9000;
+      }
+    }
+    .usr_box{
+      position: absolute;
+      right: 1vw;
+      z-index: 20000;
+
+      a{
+        .anim;
+        color: inherit;
+        
+        &:hover{
+          .anim;
+        }
+      }
+    }
+    .align_left{
+      position: relative;
+      left: 0;
+    }
+    .align_right{
+      position: relative;
+      right: 1vw;
+    }
+
+    .shadowbox1;
+  }
+
+}
+.dev{
+  &__build{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-family: 'Righteous', cursive;
+    color: #1b1b1b;
+    opacity: 0.5;
+    font-size: 2rem;
+  }
+}
+}
 @media (max-width: 600px){
 .box{
   &__main{
@@ -278,12 +486,12 @@ a{
     }
     .welcome__text{
       position: absolute;
-      left: -3vw;
+      left: 0vw;
       top: 13vh;
       width: auto;
       color: #ffffff;
       text-align: center;
-      font-size: 9vw;
+      font-size: 8vw;
       font-family: 'Righteous', cursive;
       font-weight: 600;
       text-transform: capitalize;
@@ -353,7 +561,7 @@ a{
         &__box{
             position: fixed;
             left: 0;
-            bottom: 9vw;
+            bottom: 7.05vh;
             width: 100vw;
             height: 82.9vh;
             background: #ffffff;

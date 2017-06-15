@@ -230,6 +230,193 @@ a {
     font-size: 2rem;
   }
 }
+@media (min-width: 900px) and (max-width: 1199px) {
+  .box__main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -17px;
+    padding-bottom: 17px;
+    width: 100vw;
+    height: 100vw;
+    background-color: #fd9000;
+  }
+  .box__main input[type=number] {
+    width: 70vw;
+    height: 15vh;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    margin-top: 40vh;
+    background-color: #1b1b1b;
+    color: #ffffff;
+    font-size: 5vw;
+    padding: 0 1vw;
+    border: 0px transparent none;
+    text-align: center;
+  }
+  .box__main .welcome__text {
+    position: absolute;
+    left: 14vw;
+    top: 17.5vh;
+    width: auto;
+    color: #ffffff;
+    text-align: center;
+    font-size: 6vw;
+    font-family: 'Righteous', cursive;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: 1s 0.11s ease-out;
+  }
+  .box__main .welcome__text:hover {
+    transition: 1s 0s ease-out;
+    text-shadow: -4px -4px 2px rgba(0, 0, 0, 0.75);
+  }
+  .box__main .guess {
+    width: 35vw;
+    height: 8vh;
+    margin-left: 32.5vw;
+    margin-right: 32.5vw;
+    margin-top: 1.5vh;
+    padding-top: 0.8vh;
+    text-align: center;
+    font-family: 'Righteous', cursive;
+    font-size: 3.8vw;
+    background-color: #1b1b1b;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 1s 0s ease-out;
+  }
+  .box__main .guess:hover {
+    color: #ff9000;
+    transition: 1s 0s ease-out;
+  }
+  .box__main .hint {
+    position: fixed;
+    bottom: 0;
+    left: 30vw;
+    width: 40vw;
+    height: auto;
+    background-color: #ffffff;
+    color: #1b1b1b;
+    font-size: 3vw;
+    text-align: center;
+    padding: 1vh 0;
+  }
+  .box__main .shop {
+    width: auto;
+    height: auto;
+  }
+  .box__main .shop__icon {
+    position: absolute;
+    bottom: -0.2vh;
+    left: -22.5vw;
+    background-color: #1b1b1b;
+    color: transparent;
+    width: 6vw;
+    height: 6vw;
+    border-radius: 50%;
+    border: 2px transparent solid;
+    overflow: hidden;
+    text-align: center;
+    transition: 1s 0.11s ease-out;
+  }
+  .box__main .shop__icon:hover {
+    transition: 0.3s 0.11s ease-in-out;
+    border: 5px #ffffff dashed;
+  }
+  .box__main .shop__box {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 28vw;
+    height: 89.9vh;
+    background: #ffffff;
+    z-index: 1;
+    -webkit-box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
+  }
+  .box__main .shop__box div {
+    width: 100%;
+    height: 10%;
+    padding-top: 6%;
+    background-color: inherit;
+    color: #1b1b1b;
+    border: 2px solid transparent;
+    font-family: 'Righteous', cursive;
+    font-size: 140%;
+    text-align: center;
+  }
+  .box__main .shop__box div:hover {
+    border: 2px dashed #1b1b1b;
+  }
+  .menu__box {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: #ffffff;
+    color: #1b1b1b;
+    font-size: 5vw;
+    font-family: 'Righteous', cursive;
+    padding: 1vh 1vw;
+    vertical-align: center;
+    -webkit-box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
+  }
+  .menu__box * {
+    display: inline-flex;
+  }
+  .menu__box .save {
+    margin-right: 1vw;
+  }
+  .menu__box .save:hover {
+    color: #00ffff;
+  }
+  .menu__box .logout:hover {
+    color: #ff9000;
+  }
+  .menu__box .points {
+    transition: 1s 0s ease-out;
+  }
+  .menu__box .points:hover {
+    transition: 1s 0s ease-out;
+    color: #ff9000;
+  }
+  .menu__box .usr_box {
+    position: absolute;
+    right: 1vw;
+    z-index: 20000;
+  }
+  .menu__box .usr_box a {
+    transition: 1s 0s ease-out;
+    color: inherit;
+  }
+  .menu__box .usr_box a:hover {
+    transition: 1s 0s ease-out;
+  }
+  .menu__box .align_left {
+    position: relative;
+    left: 0;
+  }
+  .menu__box .align_right {
+    position: relative;
+    right: 1vw;
+  }
+  .dev__build {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-family: 'Righteous', cursive;
+    color: #1b1b1b;
+    opacity: 0.5;
+    font-size: 2rem;
+  }
+}
 @media (max-width: 600px) {
   .box__main {
     position: absolute;
@@ -255,12 +442,12 @@ a {
   }
   .box__main .welcome__text {
     position: absolute;
-    left: -3vw;
+    left: 0vw;
     top: 13vh;
     width: auto;
     color: #ffffff;
     text-align: center;
-    font-size: 9vw;
+    font-size: 8vw;
     font-family: 'Righteous', cursive;
     font-weight: 600;
     text-transform: capitalize;
@@ -327,7 +514,7 @@ a {
   .box__main .shop__box {
     position: fixed;
     left: 0;
-    bottom: 9vw;
+    bottom: 7.05vh;
     width: 100vw;
     height: 82.9vh;
     background: #ffffff;
