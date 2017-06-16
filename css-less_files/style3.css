@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Shrikhand');
 .ontop {
   z-index: 500;
   position: fixed;
@@ -219,6 +220,48 @@ a {
   .menu__box .align_right {
     position: relative;
     right: 1vw;
+  }
+  .media {
+    color: #ffffff;
+    font-family: 'Shrikhand', cursive;
+  }
+  .media__expand {
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 20vh;
+    width: 9vh;
+    height: 45vh;
+    border-radius: 2vh;
+    background: #1b1b1b;
+    text-align: center;
+    font-size: 6vh;
+    padding: 1vh 0;
+    z-index: 5;
+    transform: translateX(80%);
+    transition: 0.3s 0.11s ease-in-out;
+  }
+  .media__expand:hover {
+    transform: translateX(0%);
+    transition: 0.3s 0s ease-in-out;
+  }
+  .media__expand__box {
+    position: fixed;
+    right: 0;
+    top: 20vh;
+    display: flex;
+    flex-direction: column;
+    width: 9vh;
+    height: 45vh;
+    background: inherit;
+    border-radius: inherit;
+    z-index: -1;
+  }
+  .media__expand__box:nth-child(1) {
+    padding-top: 3vh;
+  }
+  .media__expand__box_item {
+    font-size: 5vh;
   }
   .dev__build {
     position: fixed;

@@ -5,6 +5,8 @@ $(document).ready(function(){
 var arrow_keys_handler = function(e) {
     switch(e.keyCode){ 
         case 17: e.preventDefault(); break;
+        case 83: e.preventDefault() , shopShowHid(); break;
+        case 65: e.preventDefault() , saving(); break;
         default: break; // do not block other keys
     }
 };
@@ -168,9 +170,10 @@ function shopShowHid(){
     });
 }
 
-$('div.save').on('click',function (){
+$('div.save').on('click', saving);
+function  saving(){
 
-    var $nick = $('span.nick').html(); 
+var $nick = $('span.nick').html(); 
 var $scores = points;
 var range = n2;
 var $upgrades =
@@ -206,10 +209,53 @@ var jsonString = JSON.stringify(save);
         }
     });
 
-});
+}
+
+function media(){
+    var mediaBox = $('div.media > div.media__expand > div.media__expand__box');
+    var expandMediaButton =  $('div.media > div.media__expand');
+    var mediaButtonSelector = $('div.media > div.media__expand > div.media__expand__box > span.media__expand__box_item');
+
+    var tw = $(mediaButtonSelector.html() === 'f' );
+    var tw = $(mediaButtonSelector.html() === 't' );
+
+
+    mediaBox.slideUp(0);
+
+   expandMediaButton.on('click', showMediaBox);
+   //expandMediaButton.on('mouseleave', hidMediaOnly);
+
+    function showMediaBox(){
+        mediaBox.slideToggle(300);
+    }
+    function hidMediaOnly(){
+        mediaBox.slideUp(300);
+    }
+
+    $('span.media__expand__box_item').on('click' , share);
+
+    function share(){
+
+        if ($(this).html() === 'f'){
+
+        FB.ui({
+            method: 'share',
+            href: 'http://memyselfandi.esy.es/test/game.php',
+            quote: 'Just scorred '+$scores+ 'in gierczak :D Come and Join me!',
+            display: 'poup',
+            }, function(response){
+                hintOutput.html(response);
+            });
+        }
+        else if ($(this).html() === 't'){
+            alert('Not ready ;)');
+        }
+    }
+}
 getData();
 
 //Wywołania
+media();
 numberGuesser();
 shop();
 });

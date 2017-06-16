@@ -1,15 +1,13 @@
 <?php
 
 	session_start();
-	if(!isset($_SESSION['loggined'])&&($_SESSION['loggined']==true)) {
+	/*if(!isset($_SESSION['loggined'])&&($_SESSION['loggined']==true)) {
 		header('location: index.php');
 		exit();
-	}
+	}*/
 	require_once "dbconnect.php";
 	$connect= @new mysqli($host, $db_user, $db_pass, $db_name);
-	if($connect->connect_errno != 0) {
-		echo "Error: ".connect_errno;
-	} else {
+	if($connect->connect_errno != 0){
 			$json = file_get_contents("json_files/scores.json");
 			$obj = json_decode($json, true);
 			$points = $_SESSION['scores'];

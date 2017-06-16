@@ -29,6 +29,7 @@
 }
 //Fonts
 @import url('https://fonts.googleapis.com/css?family=Righteous');
+ @import url('https://fonts.googleapis.com/css?family=Shrikhand');
 //Main
 
 *{
@@ -46,6 +47,18 @@ a{
   text-decoration: none;
   color: inherit;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 @media (min-width: 1200px){
 .box{
   &__main{
@@ -240,6 +253,57 @@ a{
   }
 
 }
+.media{
+  color: #ffffff;
+  font-family: 'Shrikhand', cursive;
+
+  &__expand{
+    @size: 9vh;
+    @font: @size - 3;
+
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 20vh;
+    width: @size;
+    height: 45vh;
+    border-radius: 2vh;
+    background: #1b1b1b;
+    text-align: center;
+    font-size: @font;
+    padding: 1vh 0;
+    z-index: 5;
+
+    transform: translateX(80%);
+    .anim2a;
+    &:hover{
+      transform: translateX(0%);
+      .anim2b;
+    }
+
+      &__box{
+      position: fixed;
+      right: 0;
+      top: 20vh;
+      display: flex;
+      flex-direction: column;
+      width: @size;
+      height: 45vh;
+      background: inherit;
+      border-radius: inherit;
+      z-index: -1;
+
+      &:nth-child(1){
+        padding-top: 3vh;
+      }
+    
+        &_item{
+        font-size: 5vh;
+        }
+  }
+  }
+}
+
 .dev{
   &__build{
     position: fixed;
@@ -252,6 +316,18 @@ a{
   }
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 //Tablet-big
 @media (min-width: 900px) and (max-width: 1199px){
 .box{
@@ -460,6 +536,23 @@ a{
   }
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 600px){
 .box{
   &__main{

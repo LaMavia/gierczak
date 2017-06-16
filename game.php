@@ -18,7 +18,7 @@
         <div class="box__main">
 			<div class="menu__box">
 				<div class="usr_box">
-					<div href="save.php" class="save">Save</div>
+					<a target="_blank" href="save.php"><div class="save">Save</div></a>
 					<div class="logout"><a href="logout.php">Logout</a></div>
 					<span class="shop__icon">^</span>
 				</div>
@@ -43,11 +43,40 @@
 						<div class="shop__item" data-item="pps">Points/sec: 0</div>
 					</div>
 				</div>
+				<div class="media">
+					<div class="media__expand">s<br>h<br>a<br>r<br>e
+						<div class="media__expand__box">
+							<span class="media__expand__box_item">f</span> <!--Add fontello afterall -->
+							<span class="media__expand__box_item">t</span>
+						</div>
+					</div>
+				</div>
 				<div class="dev__build">DevBuild</div>
         </div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-			  crossorigin="anonymous"></script>
+			  crossorigin="anonymous">
+	</script>
+	<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : 'your-app-id',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.9'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 	<script src="js_files/game.js">
 		points = '<?php $shop = new Shopping; echo $shop->pointsFromBase;?>'
 		$('div.points').html(points);
