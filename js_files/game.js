@@ -164,10 +164,7 @@ function shopShowHid(){
         async: false,
         cache: false,
         success: function(data){
-            data = $.parseJSON(data);
-            $.each(data, function(i, save){
-                console.log(save);
-            });
+            console.log(data);
         },
         error: function(){
             alert('Error Ajax');
@@ -187,28 +184,22 @@ var $upgrades =
         'pointsPerSec': pps,
         'multip': multi
     };
+console.log($nick , $scores , $upgrades);
 
-var save = {
-    'nick': $nick,
-    'scores': $scores,
-    'upgrades': $upgrades
-}
-var jsonString = JSON.stringify(save);
 
     //Save to DB
     $.ajax({
         url: "save.php",
         type: "POST",
-        data: {
-            userID: $nick,
-            userPoints: $scores,
-            userUpgrades: $upgrades
-        },
+        data:{
+            userID:$nick,
+            userPoints:$scores,
+            userUpgrades:$upgrades},
         async: false,
         cache: false,
-        success: function(){
+        success: function(response){
             alert('Data saved');
-            console.log(save);
+            console.log(response);
             getData();
         },
         error: function(){
