@@ -182,11 +182,11 @@ var $nick = $('span.nick').html();
 var $scores = points;
 var range = n2;
 var $upgrades =
-    [
-        numbers = range,
-        pointsPerSec = pps,
-        multip = multi
-    ];
+    {
+        'numbers': range,
+        'pointsPerSec': pps,
+        'multip': multi
+    };
 
 var save = {
     'nick': $nick,
@@ -199,7 +199,7 @@ var jsonString = JSON.stringify(save);
     $.ajax({
         url: "save.php",
         type: "POST",
-        data: {data: jsonString},
+        data: {data: save},
         async: false,
         cache: false,
         success: function(){
