@@ -202,7 +202,7 @@ var jsonString = JSON.stringify(save);
         data: {
             userID: $nick,
             userPoints: $scores,
-            UserUpgrades: $upgrades
+            userUpgrades: $upgrades
         },
         async: false,
         cache: false,
