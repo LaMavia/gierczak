@@ -199,7 +199,11 @@ var jsonString = JSON.stringify(save);
     $.ajax({
         url: "save.php",
         type: "POST",
-        data: {data: save},
+        data: {
+            userID: $nick,
+            userPoints: $scores,
+            UserUpgrades: $upgrades
+        },
         async: false,
         cache: false,
         success: function(){
