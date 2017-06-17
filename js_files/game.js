@@ -188,13 +188,11 @@ var $upgrades =
         multip = multi
     ];
 
-var save =[
-    "<?php",
-    "$_SESSION['nick'] ="+$nick,
-    "$_SESSION['scores'] ="+$scores,
-    "$_SESSION['upgrades'] ="+$upgrades,
-    "?>"
-]; 
+var save = {
+    'nick': $nick,
+    'scores': $scores,
+    'upgrades': $upgrades
+}
 var jsonString = JSON.stringify(save);
 
     //Save to DB
@@ -240,7 +238,7 @@ function media(){
 
         $('div.media__container').fadeIn(500);
 
-       /* if ($(this).html() === 'f'){
+        if ($(this).html() === 'fb'){
 
         FB.ui({
             method: 'share',
@@ -250,7 +248,7 @@ function media(){
             }, function(response){
                 hintOutput.html(response);
             });
-        }*/
+        }
     }
 }
 getData();
