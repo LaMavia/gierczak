@@ -44,10 +44,14 @@
 					</div>
 				</div>
 				<div class="media">
-					<div class="media__expand">s<br>h<br>a<br>r<br>e
-						<div class="media__expand__box">
-							<span class="media__expand__box_item">f</span> <!--Add fontello afterall -->
-							<span class="media__expand__box_item">t</span>
+					<div class="media__button">+</div>
+					<div class="media__container">
+						<div class="media__container__box">
+							<span class="media__container__box_mainText">Share on</span>
+							<div class="media__container__box__medias">
+								<div class="media__container__box__medias_fb">Fb</div>
+								<div class="media__container__box__medias_tw">Tw</div>
+							</div>
 						</div>
 					</div>
 				</div>

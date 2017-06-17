@@ -7,10 +7,15 @@ var arrow_keys_handler = function(e) {
         case 17: e.preventDefault(); break;
         case 83: e.preventDefault() , shopShowHid(); break;
         case 65: e.preventDefault() , saving(); break;
+        case 77: e.preventDefault() , toggleMedia(); break;
         default: break; // do not block other keys
     }
 };
     window.addEventListener("keydown", arrow_keys_handler, false);
+
+    function toggleMedia(){
+        $('div.media__container').fadeToggle(500);
+    }
 
 
 var n1 = 1;
@@ -212,31 +217,30 @@ var jsonString = JSON.stringify(save);
 }
 
 function media(){
-    var mediaBox = $('div.media > div.media__expand > div.media__expand__box');
-    var expandMediaButton =  $('div.media > div.media__expand');
-    var mediaButtonSelector = $('div.media > div.media__expand > div.media__expand__box > span.media__expand__box_item');
-
-    var tw = $(mediaButtonSelector.html() === 'f' );
-    var tw = $(mediaButtonSelector.html() === 't' );
+    var mediaBox = $('div.media__container');
+    var expandMediaButton =  $('div.media__button');
 
 
-    mediaBox.slideUp(0);
+
+    mediaBox.fadeOut(0);
 
    expandMediaButton.on('click', showMediaBox);
-   //expandMediaButton.on('mouseleave', hidMediaOnly);
+   mediaBox.on('click' , hidMediaBox)
 
     function showMediaBox(){
-        mediaBox.slideToggle(300);
+        mediaBox.fadeIn(500);
     }
-    function hidMediaOnly(){
-        mediaBox.slideUp(300);
+    function hidMediaBox(){
+        mediaBox.fadeOut(500);
     }
 
-    $('span.media__expand__box_item').on('click' , share);
+    $('div.media__button').on('click' , share);
 
     function share(){
 
-        if ($(this).html() === 'f'){
+        $('div.media__container').fadeIn(500);
+
+       /* if ($(this).html() === 'f'){
 
         FB.ui({
             method: 'share',
@@ -246,10 +250,7 @@ function media(){
             }, function(response){
                 hintOutput.html(response);
             });
-        }
-        else if ($(this).html() === 't'){
-            alert('Not ready ;)');
-        }
+        }*/
     }
 }
 getData();

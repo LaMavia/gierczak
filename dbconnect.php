@@ -2,5 +2,5 @@
 	$host = "localhost";
 	$db_user = "root";
 	$db_pass = "";
-	$db_name = "numberguesser";
+	$db_name = "users";
 ?>

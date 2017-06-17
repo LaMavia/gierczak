@@ -18,12 +18,20 @@
 .anim1b{transition: 1s 0s ease-out;}
 .anim2a{transition: 0.3s 0.11s ease-in-out;}
 .anim2b{transition: 0.3s 0s ease-in-out;}
-.shadowbox1{-webkit-box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
-            -moz-box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
-            box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);}
+.shadowbox1{
+  -webkit-box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
+  moz-box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
+  }
 .shadowbox2{    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    }
+.shadowbox3{
+  -webkit-box-shadow: -1px -1px 25px 7.5px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px -1px 25px 7.5px rgba(0,0,0,0.75);
+box-shadow: -1px -1px 25px 7.5px rgba(0,0,0,0.75);
+}
 .textshadow1{
     text-shadow: -4px -4px 2px rgba(0, 0, 0, 0.75);
 }
@@ -257,51 +265,105 @@ a{
   color: #ffffff;
   font-family: 'Shrikhand', cursive;
 
-  &__expand{
-    @size: 9vh;
-    @font: @size - 3;
+  &__button{
+    @buttonSize: 7vh;
 
-    display: block;
     position: fixed;
     right: 0;
-    top: 20vh;
-    width: @size;
-    height: 45vh;
-    border-radius: 2vh;
-    background: #1b1b1b;
+    top: 15vh;
+    width: @buttonSize;
+    height: @buttonSize;
+    border-radius: 1.5vh;
+    background-color: #1b1b1b;
+    color: #ffffff;
     text-align: center;
-    font-size: @font;
-    padding: 1vh 0;
-    z-index: 5;
-
+    padding-top: @buttonSize / 3;
     transform: translateX(80%);
+
     .anim2a;
+
     &:hover{
-      transform: translateX(0%);
+      background-color: #ffffff;
+      color: #1b1b1b;
+      transform: translateX(10%);
       .anim2b;
     }
+  }//End of media__button
+  &__container{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 500;
+    background: rgba(5 , 5 , 5 ,0.75);
 
-      &__box{
-      position: fixed;
-      right: 0;
-      top: 20vh;
-      display: flex;
-      flex-direction: column;
-      width: @size;
-      height: 45vh;
-      background: inherit;
-      border-radius: inherit;
-      z-index: -1;
+    &__box{
+      width: 50vw;
+      height: 75vh;
+      margin: 10vh auto;
+      background: #ffffff;
+      z-index: 1000;
+      .shadowbox1;
 
-      &:nth-child(1){
-        padding-top: 3vh;
-      }
-    
-        &_item{
-        font-size: 5vh;
+      &_mainText{
+        display: block;
+        width: 50%;
+        height: auto;
+        color: #1b1b1b;
+        font-family: 'Shrikhand', cursive;
+        font-size: 5vw;
+        margin: 0 auto;
+        padding-top: 1vh;
+      }//end of main text
+
+      &__medias{
+        position: relative;
+        bottom: -1.6vh;
+        left: 0;
+        display: flex;
+        flex-flow: row;
+        flex-wrap: nowrap;
+        flex-basis: 1;
+        flex-shrink: 1;
+        width: 100%;
+        height: 80%;
+        perspective: 50vw;
+
+        .mediasSize{
+          width: 50%;
+          height: 100%;
+
+          font-size: 5vw;
+          text-align: center;
+          padding: 35% 0;
+
+          .anim1a;
         }
-  }
-  }
+
+        &_fb{
+          .mediasSize;
+          background-color: #3b5998;
+          &:hover{
+            color: #55acee;
+            .shadowbox3;
+            .anim1b;
+            transform: rotateY(30deg);
+          }
+        }
+        &_tw{
+          .mediasSize;
+          background-color: #55acee;
+          &:hover{
+            color: #3b5998;
+            .shadowbox3;
+            .anim1b;
+            transform: rotateY(-30deg);
+          }
+        }
+      }//end of medias
+    }//end of media container box
+  }//End of Media container
 }
 
 .dev{
@@ -524,6 +586,106 @@ a{
   }
 
 }
+.media{
+  color: #ffffff;
+  font-family: 'Shrikhand', cursive;
+
+  &__button{
+    @buttonSize: 9vh;
+
+    position: fixed;
+    right: 0;
+    top: 15vh;
+    width: @buttonSize;
+    height: @buttonSize;
+    border-radius: 1.5vh;
+    background-color: #1b1b1b;
+    color: #ffffff;
+    font-size: 5vh;
+    text-align: center;
+    padding-top: @buttonSize / 4.5;
+    transform: translateX(10%);
+
+  }//End of media__button
+  &__container{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 500;
+    background: rgba(5 , 5 , 5 ,0.75);
+
+    &__box{
+      width: 75vw;
+      height: 75vh;
+      margin: 10vh auto;
+      background: #ffffff;
+      z-index: 1000;
+      .shadowbox1;
+
+      &_mainText{
+        display: block;
+        width: 50%;
+        height: auto;
+        color: #1b1b1b;
+        font-family: 'Shrikhand', cursive;
+        font-size: 9vh;
+        margin: 0 auto;
+        padding-top: 2vh;
+        text-align: center;
+      }//end of main text
+
+      &__medias{
+        position: relative;
+        bottom: -1.6vh;
+        left: 0;
+        display: flex;
+        flex-flow: row;
+        flex-wrap: nowrap;
+        flex-basis: 1;
+        flex-shrink: 1;
+        width: 100%;
+        height: 81.5%;
+        perspective: 75vw;
+
+        .mediasSize{
+          width: 50%;
+          height: 100%;
+
+          font-size: 10vh;
+          text-align: center;
+          padding: 35% 0;
+
+          .anim1a;
+        }
+
+        &_fb{
+          .mediasSize;
+          background-color: #3b5998;
+          &:hover{
+            color: #55acee;
+            .shadowbox3;
+            .anim1b;
+            transform: rotateY(30deg);
+          }
+        }
+        &_tw{
+          .mediasSize;
+          background-color: #55acee;
+          &:hover{
+            color: #3b5998;
+            .shadowbox3;
+            .anim1b;
+            transform: rotateY(-30deg);
+          }
+        }
+      }//end of medias
+    }//end of media container box
+  }//End of Media container
+}//end of media
+
+
 .dev{
   &__build{
     position: fixed;
@@ -579,8 +741,8 @@ a{
     }
     .welcome__text{
       position: absolute;
-      left: 0vw;
-      top: 13vh;
+      left: 0.5vw;
+      top: 16vh;
       width: auto;
       color: #ffffff;
       text-align: center;
@@ -749,6 +911,106 @@ a{
   }
 
 }
+
+.media{
+  color: #ffffff;
+  font-family: 'Shrikhand', cursive;
+
+  &__button{
+    @buttonSize: 9vh;
+
+    position: fixed;
+    right: 0;
+    top: 10vh;
+    width: @buttonSize;
+    height: @buttonSize;
+    border-radius: 1.5vh;
+    background-color: #1b1b1b;
+    color: #ffffff;
+    font-size: 5vh;
+    text-align: center;
+    padding-top: @buttonSize / 4.5;
+    transform: translateX(10%);
+
+  }//End of media__button
+  &__container{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 500;
+    background: rgba(5 , 5 , 5 ,0.75);
+
+    &__box{
+      width: 85vw;
+      height: 75vh;
+      margin: 10vh auto;
+      background: #ffffff;
+      z-index: 1000;
+      .shadowbox1;
+
+      &_mainText{
+        display: block;
+        width: 50%;
+        height: auto;
+        color: #1b1b1b;
+        font-family: 'Shrikhand', cursive;
+        font-size: 7vh;
+        margin: 0 auto;
+        padding-top: 2vh;
+        text-align: center;
+      }//end of main text
+
+      &__medias{
+        position: relative;
+        bottom: -1.6vh;
+        left: 0;
+        display: flex;
+        flex-flow: row;
+        flex-wrap: nowrap;
+        flex-basis: 1;
+        flex-shrink: 1;
+        width: 100%;
+        height: 84.5%;
+        perspective: 75vw;
+
+        .mediasSize{
+          width: 50%;
+          height: 100%;
+
+          font-size: 10vh;
+          text-align: center;
+          padding: 35% 0;
+
+          .anim1a;
+        }
+
+        &_fb{
+          .mediasSize;
+          background-color: #3b5998;
+          &:hover{
+            color: #55acee;
+            .shadowbox3;
+            .anim1b;
+            transform: rotateY(30deg);
+          }
+        }
+        &_tw{
+          .mediasSize;
+          background-color: #55acee;
+          &:hover{
+            color: #3b5998;
+            .shadowbox3;
+            .anim1b;
+            transform: rotateY(-30deg);
+          }
+        }
+      }//end of medias
+    }//end of media container box
+  }//End of Media container
+}//end of media
+
 .dev{
   &__build{
     position: fixed;
