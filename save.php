@@ -12,22 +12,74 @@
 	}
 	else
 	{
+		
+		//Usuń komentarze jeśli będzie działać
+			/*if (isset($_POST["userID"])){
+            $nick = $_POST["userID"] or $_REQUEST["userID"];
+            $enNick = json_encode($nick);
+            echo $enNick;
+			}
+			
+			if(isset($_POST["userPoints"])){
+			$points = $_POST["userPoints"] or $_REQUEST["userPoints"];
+			$enPoints =	json_encode($points);
+			echo $enPoints;
+			}
 
-			$post = $_POST['userID'];
-			echo $post;
+			if(isset($_POST["userUpgrades"])){
+			$upgrades = $_POST["userUpgrades"] or $_REQUEST["userUpgrades"];
+			$enUpgrades = json_encode($upgrades);
+			echo $enUpgrades;
+			}*/
+			$nick = $_COOKIE['nick'];
+			$points = $_COOKIE['points'];
+			$upgrades = $_COOKIE['upgrades'];
+
+			echo $nick , $points , $upgrades;
+
 
 		
-		$json = file_get_contents("json_files/scores.json");
+		/*$json = file_get_contents("json_files/scores.json");
 		$obj = json_decode($json, true);
-		$points = $_SESSION['points'];
-		$pps = $obj[0]["upgrades"][0]["pps"];
-		$id = $_SESSION["id"];
-		$sql = $connect->query("UPDATE users SET POINTS = '$points' WHERE ID = '$id'");
-		$sqlq = $connect->query("SELECT POINTS FROM users WHERE ID = '$id'");
+		$sql = $connect->query("UPDATE users SET POINTS = '$enPoints' WHERE USERNAME = '$enNick'");
+		$sqlq = $connect->query("SELECT POINTS FROM users WHERE USERNAME = '$enNick'");
 		 $row = $sqlq->fetch_assoc();
 		 $_SESSION["points"] = $row['POINTS'];
 		//header('location: game.php');
 		$sqlq->free();
-		$connect->close();
+		$connect->close();*/
 	}
+?>
+
+
+
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous">
+	</script>
+
+<script>
+	$.ajax({
+		url: "game.php",
+		type: "GET",
+		data:{
+			"userID":userID,
+			"useerPoints":userPoints,
+			"userUpgrades":userUpgrades
+		},
+		success: function (resp){
+			console.log(resp);
+		},
+		error: function(ress){
+			console.log(ress);
+		}
+	})
+</script>
+	</head>
+	<body></body>
+</html>
+<?php 
+die();
 ?>

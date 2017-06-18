@@ -61,6 +61,7 @@
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 			  crossorigin="anonymous">
 	</script>
+	<script src="js_files/js.cookie.js"></script>
 	<script>
   window.fbAsyncInit = function() {
     FB.init({

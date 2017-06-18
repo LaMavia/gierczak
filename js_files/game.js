@@ -161,8 +161,6 @@ function shopShowHid(){
     $.ajax({
         type: 'GET',
         url: 'save.php',
-        async: false,
-        cache: false,
         success: function(data){
             console.log(data);
         },
@@ -186,26 +184,31 @@ var $upgrades =
     };
 console.log($nick , $scores , $upgrades);
 
+Cookies.set('nick', $nick , {secure: true});
+Cookies.set('points' , $scores , {secure: true});
+Cookies.set('upgrades' , $upgrades , {secure: true});
+
 
     //Save to DB
-    $.ajax({
+   /* $.ajax({
         url: "save.php",
         type: "POST",
         data:{
-            userID:$nick,
-            userPoints:$scores,
-            userUpgrades:$upgrades},
+            userID: $nick,
+            userPoints: $scores,
+            userUpgrades: $upgrades
+        },
         async: false,
         cache: false,
         success: function(response){
             alert('Data saved');
             console.log(response);
-            getData();
         },
-        error: function(){
+        error: function(resp){
             alert('You fucked up mate :(');
+            alert(resp)
         }
-    });
+    });*/
 
 }
 
@@ -246,7 +249,6 @@ function media(){
         }
     }
 }
-getData();
 
 //Wywołania
 media();
