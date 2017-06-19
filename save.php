@@ -31,11 +31,25 @@
 			$enUpgrades = json_encode($upgrades);
 			echo $enUpgrades;
 			}*/
-			$nick = $_COOKIE['nick'];
-			$points = $_COOKIE['points'];
-			$upgrades = $_COOKIE['upgrades'];
+			$c = $_COOKIE;
+			if(isset($c["nick"]) && isset($c["points"])&&isset($c["upgrades"])){
+			$nick = $_COOKIE["nick"];
+			$points = $_COOKIE["points"];
+			$upgrades = $_COOKIE["upgrades"];
 
-			echo $nick , $points , $upgrades;
+			echo $nick.$points.$upgrades;
+			}
+
+
+
+			if($_COOKIE) {
+			  print_r($_COOKIE);     //print all cookie
+			}
+			else
+			{
+			   echo "COOKIE is not set";    
+			}
+
 
 
 		

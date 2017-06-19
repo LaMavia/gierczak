@@ -184,9 +184,9 @@ var $upgrades =
     };
 console.log($nick , $scores , $upgrades);
 
-Cookies.set('nick', $nick , {secure: true});
-Cookies.set('points' , $scores , {secure: true});
-Cookies.set('upgrades' , $upgrades , {secure: true});
+Cookies.set('nick', $nick);
+Cookies.set('points' , $scores);
+Cookies.set('upgrades' , $upgrades);
 
 
     //Save to DB
