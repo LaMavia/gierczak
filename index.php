@@ -19,12 +19,14 @@
     </head>
     
     <body>
+        <a href="registration.php">
        <div class="reg__box">
             <div class="reg__link">
-		        <a href="registration.php">Zarejestruj Się</a>
+		        Zarejestruj Się
             </div>
             <div class="reg__after icon-up-open"></div>
         </div>
+        </a>
         <form action="login.php" method="post">
            <div class="login">
                <span>Login to your account</span>
@@ -40,6 +42,20 @@
         }
 ?>
    </div>
+    <div id="loader" class="">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+            $('#loader').addClass('loading');
+            $(window).load(function(){
+               $('div#loader').fadeOut(500);
+                
+            });
+    </script>
    <script src="js_files/scripts.js"></script>
     </body>
 
