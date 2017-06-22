@@ -176,7 +176,7 @@ function  saving(){
 var $nick = $('span.nick').html(); 
 var $scores = points;
 var range = n2;
-var $upgrades =
+var $ranges =
     {
         'numbers': range,
         'pointsPerSec': pps,
@@ -185,9 +185,10 @@ var $upgrades =
 console.log($nick , $scores , $upgrades);
 
 Cookies.set('nick', $nick);
-Cookies.set('points' , $scores);
-Cookies.set('upgrades' , $upgrades);
-
+Cookies.set('points', points);
+Cookies.set('rage', range);
+Cookies.set('pps', pps)
+Cookies.set('multi', multi)
 
     //Save to DB
    /* $.ajax({
