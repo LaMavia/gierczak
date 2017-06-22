@@ -36,6 +36,7 @@
 						$_SESSION["points"] = $row['POINTS'];
 						$_SESSION["pps"] = $row['PPS'];
 						$_SESSION["multi"] = $row['MULTI'];
+						$_SESSION["range"] = $row['RANGEMAX'];
 						//czyscimy zapytanie
 						unset($_SESSION["niezalogowano"]);
 						$result->close();

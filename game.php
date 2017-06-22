@@ -1,10 +1,6 @@
 <?php
 	session_start();
 	require_once "shop.php";
-	$json = file_get_contents("json_files/scores.json");
-	$obj = json_decode($json, true);
-	$nick = $obj[0]["nick"];
-	$points = $obj[0]["scores"];
 ?>
 <!DOCTYPE HTML>
 <html lang="pl">
@@ -61,6 +57,13 @@
 					<span class="shortcuts__media">"M"-Media</span>
 				</div>
         </div>
+		<!-- W tym miejscu jak umiesz to przechwyc wartosc z tego inputa -->
+		<form>
+			<input type="hidden" value=<?php echo $_SESSION['points']?>>
+			<input type="hidden" value=<?php echo $_SESSION['pps']?>>
+			<input type="hidden" value=<?php echo $_SESSION['multi']?>>
+			<input type="hidden" value=<?php echo $_SESSION['range']?>>
+		</form>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 			  crossorigin="anonymous">
