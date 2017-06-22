@@ -23,6 +23,9 @@
 		$sqlq = $connect->query("SELECT POINTS FROM users WHERE ID = '$id'");
 		$row = $sqlq->fetch_assoc();
 		$_SESSION["points"] = $row['POINTS'];
+		$_SESSION["range"] = $row['RANGEMAX'];
+		$_SESSION["pps"] = $row['PPS'];
+		$_SESSION["multi"] = $row['MULTI'];
 		header('location: game.php');
 		$sqlq->free();
 		$connect->close();

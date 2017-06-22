@@ -56,6 +56,9 @@
 		<!-- W tym miejscu jak umiesz to przechwyc wartosc z tego inputa -->
 		<form>
 			<input type="hidden" value=<?php echo $_SESSION['points']?>>
+			<input type="hidden" value=<?php echo $_SESSION['pps']?>>
+			<input type="hidden" value=<?php echo $_SESSION['multi']?>>
+			<input type="hidden" value=<?php echo $_SESSION['range']?>>
 		</form>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
