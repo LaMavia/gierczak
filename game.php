@@ -56,6 +56,10 @@
 					</div>
 				</div>
 				<div class="dev__build">DevBuild</div>
+				<div class="shortcuts">
+					<span class="shortcuts__shop">"S"-Shop</span>
+					<span class="shortcuts__media">"M"-Media</span>
+				</div>
         </div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

@@ -375,8 +375,21 @@ a{
     color: #1b1b1b;
     opacity: 0.5;
     font-size: 2rem;
+    }
   }
-}
+  .shortcuts{
+    position: fixed;
+    left: 1vw;
+    top: 15vh;
+    display: flex;
+    flex-direction: column;
+    color: #1b1b1b;
+    opacity: 0.5;
+    font-family: Anton;
+    font-size: 3vh;
+    font-weight: 800;
+    text-transform: uppercase; 
+  }
 }
 
 
@@ -695,9 +708,12 @@ a{
     color: #1b1b1b;
     opacity: 0.5;
     font-size: 2rem;
+    }
+  }
+  .shortcuts{
+    display: none;
   }
 }
-}
 
 
 
@@ -715,7 +731,7 @@ a{
 
 
 
-@media (max-width: 600px){
+@media (max-width: 500px){
 .box{
   &__main{
     position: absolute;
@@ -1020,6 +1036,9 @@ a{
     color: #1b1b1b;
     opacity: 0.5;
     font-size: 1rem;
+    }
   }
-}
+  .shortcuts{
+    display: none;
+  }
 }

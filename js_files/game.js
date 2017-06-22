@@ -6,7 +6,7 @@ var arrow_keys_handler = function(e) {
     switch(e.keyCode){ 
         case 17: e.preventDefault(); break;
         case 83: e.preventDefault() , shopShowHid(); break;
-        case 65: e.preventDefault() , saving(); break;
+        //case 65: e.preventDefault() , saving(); break;
         case 77: e.preventDefault() , toggleMedia(); break;
         default: break; // do not block other keys
     }
