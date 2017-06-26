@@ -17,14 +17,76 @@ var arrow_keys_handler = function(e) {
         $('div.media__container').fadeToggle(500);
     }
 
+//Inner functions
+var To = {
+    points: function(data){
+        document.querySelector('div.points').innerHTML = "Points: "+data;
+    },
+    range: function(data){
+        document.querySelector('div.shop__box > div[data-item="range"]').innerHTML ="Range: 1-"+data;
+    },
+    pps: function(data){
+        document.querySelector('div.shop__box > div[data-item="pps"]').innerHTML = 'Points/sec: '+data;
+    }
+}
+
+var cookieData = [];
+cookieData +=      
+    Cookies.get('nick')+
+    Cookies.get('points')+
+    Cookies.get('rage')+
+    Cookies.get('pps')+
+    Cookies.get('multi')
+;
+console.log(cookieData);
+
 
 var n1 = 1;
-var n2 = 90;
-var numberToGuess = Math.round(Math.random() * (n2 - n1) + n1);
-
-var points = 0;
-var multi = 1;
+var n2;
+var points;
+var multi;
 var pps = 0;
+
+//var dataForm = document.querySelector('form.data');
+    var n2FromDb = Cookies.get('rage');
+        if(n2FromDb === undefined || n2FromDb === NaN){
+            n2 = 90;
+        }
+        else{
+            n2 = n2FromDb;
+        }
+        To.range(n2);
+        console.log(n2);
+    var pointsFromDb = Cookies.get('points');
+        if(pointsFromDb === undefined || pointsFromDb === NaN){
+            points = 0;
+            //Number(points);
+        }
+        else{
+            points = pointsFromDb;
+            //Number(points);
+        }
+        To.points(points);
+        console.log(points);
+    var multiFromDb = Cookies.get('multi');
+        if(multiFromDb === undefined || multiFromDb === NaN){
+            multi = 1;
+        }
+        else{
+            multi = multiFromDb
+        }
+        console.log(multi);
+    var ppsFromDb = Cookies.get('pps');
+        if(ppsFromDb === undefined || ppsFromDb === NaN){
+            pps = 0;
+        }
+        else{
+            pps = ppsFromDb;
+        }
+        To.pps(pps);
+        console.log(pps);
+
+var numberToGuess = Math.round(Math.random() * (n2 - n1) + n1);
 
 //vars for shop
 var pointsForRange = 20;
@@ -174,21 +236,26 @@ $('div.save').on('click', saving);
 function  saving(){
 
 var $nick = $('span.nick').html(); 
-var $scores = points;
-var range = n2;
 var $ranges =
     {
         'numbers': range,
         'pointsPerSec': pps,
         'multip': multi
     };
-console.log($nick , $scores , $upgrades);
 
 Cookies.set('nick', $nick);
 Cookies.set('points', points);
-Cookies.set('rage', range);
-Cookies.set('pps', pps)
-Cookies.set('multi', multi)
+Cookies.set('rage', n2);
+Cookies.set('pps', pps);
+Cookies.set('multi', multi);
+
+alert(       
+    Cookies.get('nick')+
+    Cookies.get('points')+
+    Cookies.get('rage')+
+    Cookies.get('pps')+
+    Cookies.get('multi')
+);
 
     //Save to DB
    /* $.ajax({

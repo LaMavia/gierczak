@@ -13,7 +13,7 @@
 	else
 	{
 		$pkt = $_COOKIE['points'];
-		$range = $_COOKIE['range'];
+		$range = $_COOKIE['rage'];
 		$pps = $_COOKIE['pps'];
 		$multi = $_COOKIE['multi'];
 		$json = file_get_contents("json_files/scores.json");
@@ -22,10 +22,10 @@
 		$sql = $connect->query("UPDATE users SET POINTS = '$pkt', PPS= '$pps' , MULTI = '$multi' , RANGEMAX = '$range' WHERE ID = '$id'");
 		$sqlq = $connect->query("SELECT POINTS FROM users WHERE ID = '$id'");
 		$row = $sqlq->fetch_assoc();
-		$_SESSION["points"] = $row['POINTS'];
-		$_SESSION["range"] = $row['RANGEMAX'];
-		$_SESSION["pps"] = $row['PPS'];
-		$_SESSION["multi"] = $row['MULTI'];
+		$_COOKIE["points"] = $row['POINTS'];
+		$_COOKIE["rage"] = $row['RANGEMAX'];
+		$_COOKIE["pps"] = $row['PPS'];
+		$_COOKIE["multi"] = $row['MULTI'];
 		header('location: game.php');
 		$sqlq->free();
 		$connect->close();

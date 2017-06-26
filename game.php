@@ -14,7 +14,7 @@
         <div class="box__main">
 			<div class="menu__box">
 				<div class="usr_box">
-					<a target="_blank" href="save.php"><div class="save">Save</div></a>
+					<a href="save.php"><div class="save">Save</div></a>
 					<div class="logout"><a href="logout.php">Logout</a></div>
 					<span class="shop__icon">^</span>
 				</div>
@@ -52,17 +52,13 @@
 					</div>
 				</div>
 				<div class="dev__build">DevBuild</div>
-				<div class="shortcuts">
-					<span class="shortcuts__shop">"S"-Shop</span>
-					<span class="shortcuts__media">"M"-Media</span>
-				</div>
         </div>
 		<!-- W tym miejscu jak umiesz to przechwyc wartosc z tego inputa -->
-		<form>
-			<input type="hidden" value=<?php echo $_SESSION['points']?>>
-			<input type="hidden" value=<?php echo $_SESSION['pps']?>>
-			<input type="hidden" value=<?php echo $_SESSION['multi']?>>
-			<input type="hidden" value=<?php echo $_SESSION['range']?>>
+		<form class="data">
+			<input data-type="points" type="hidden" value=<?php echo $_COOKIE['points']?>>
+			<input data-type="pps" type="hidden" value=<?php echo $_COOKIE['pps']?>>
+			<input data-type="multi" type="hidden" value=<?php echo $_COOKIE['multi']?>>
+			<input data-type="range" type="hidden" value=<?php echo $_COOKIE['rage']?>>
 		</form>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -93,5 +89,8 @@
 		points = '<?php $shop = new Shopping; echo $shop->pointsFromBase;?>'
 		$('div.points').html(points);
 	</script>
+	<!-- To Do:
+	-Add loader
+	-->
     </body>
 </html>
