@@ -84,11 +84,11 @@ var pps = 0;
         }
         To.pps(pps);
     var nickFromDb = get.cookies.nick;
-        if(nickFromDb === undefined || nickFromDb === null){
-            nick = "Guess"
+        if(nickFromDb !== "Guest" && (nickFromDb !== null || nickFromDb !== undefined)){
+            nick = nickFromDb;
         }
         else{
-            nick = nickFromDb;
+            nick = "Guest";
         }
 
 var numberToGuess = Math.round(Math.random() * (n2 - n1) + n1);
@@ -239,7 +239,8 @@ function shopShowHid(){
 
 $('div.save').on('click', saving);
 function  saving(){
-
+    nick = $('span.nick').html();
+        nick = String(nick);
     points = Number(points);
     n2 = Number(n2);
     pps = Number(pps);
