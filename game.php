@@ -60,9 +60,7 @@
 			<input data-type="multi" type="hidden" value=<?php echo $_COOKIE['multi']?>>
 			<input data-type="range" type="hidden" value=<?php echo $_COOKIE['rage']?>>
 		</form>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-			  crossorigin="anonymous">
+	<script src="./js_files/jquery-3.2.1.min.js">
 	</script>
 	<script src="js_files/js.cookie.js"></script>
 	<script>

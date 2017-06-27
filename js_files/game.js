@@ -29,18 +29,19 @@ var To = {
         document.querySelector('div.shop__box > div[data-item="pps"]').innerHTML = 'Points/sec: '+data;
     }
 }
-
-var cookieData = [];
-cookieData +=      
-    Cookies.get('nick')+
-    Cookies.get('points')+
-    Cookies.get('rage')+
-    Cookies.get('pps')+
-    Cookies.get('multi')
-;
-console.log(cookieData);
-
-
+var get = {
+    cookies: {
+        nick: Cookies.get('nick'),
+        points : (Cookies.get('points')),
+        range: (Cookies.get('rage')),
+        pps: (Cookies.get('pps')),
+        multi: (Cookies.get('multi')),
+    }
+}
+console.log(
+    get.cookies
+);
+var nick = $('span.nick').html();
 var n1 = 1;
 var n2;
 var points;
@@ -48,43 +49,47 @@ var multi;
 var pps = 0;
 
 //var dataForm = document.querySelector('form.data');
-    var n2FromDb = Cookies.get('rage');
+    var n2FromDb = get.cookies.range;
         if(n2FromDb === undefined || n2FromDb === NaN){
             n2 = 90;
         }
         else{
-            n2 = n2FromDb;
+            n2 = Number(n2FromDb);
         }
         To.range(n2);
-        console.log(n2);
-    var pointsFromDb = Cookies.get('points');
+    var pointsFromDb = get.cookies.points;
         if(pointsFromDb === undefined || pointsFromDb === NaN){
             points = 0;
             //Number(points);
         }
         else{
-            points = pointsFromDb;
+            points = Number(pointsFromDb);
             //Number(points);
         }
         To.points(points);
-        console.log(points);
-    var multiFromDb = Cookies.get('multi');
+    var multiFromDb = get.cookies.multi;
         if(multiFromDb === undefined || multiFromDb === NaN){
             multi = 1;
         }
         else{
-            multi = multiFromDb
+            multi = Number(multiFromDb);
         }
-        console.log(multi);
-    var ppsFromDb = Cookies.get('pps');
+    var ppsFromDb = get.cookies.pps;
         if(ppsFromDb === undefined || ppsFromDb === NaN){
             pps = 0;
         }
         else{
-            pps = ppsFromDb;
+            pps = Number(ppsFromDb);
+            pointsPerSec();
         }
         To.pps(pps);
-        console.log(pps);
+    var nickFromDb = get.cookies.nick;
+        if(nickFromDb === undefined || nickFromDb === null){
+            nick = "Guess"
+        }
+        else{
+            nick = nickFromDb;
+        }
 
 var numberToGuess = Math.round(Math.random() * (n2 - n1) + n1);
 
@@ -192,7 +197,7 @@ function checkItem(){
     //buying points per secound
     else if (type === 'pps'){
         if(points >= pointsForPps){
-            pps = pps + 0.3;
+            pps = pps + 1;
             points = points - pointsForPps;
             pointsForPps = pointsForPps*2;
             $('div.shop__item[data-item="pps"]').html('Points/sec: '+pps);
@@ -209,7 +214,7 @@ function checkItem(){
 function pointsPerSec(){
     points = points + pps;
     $('div.points').html('Points: '+points);
-    setTimeout( pointsPerSec , 1000);
+    setTimeout( pointsPerSec , 10000);
 }
 
 function shopShowHid(){
@@ -235,48 +240,16 @@ function shopShowHid(){
 $('div.save').on('click', saving);
 function  saving(){
 
-var $nick = $('span.nick').html(); 
-var $ranges =
-    {
-        'numbers': range,
-        'pointsPerSec': pps,
-        'multip': multi
-    };
+    points = Number(points);
+    n2 = Number(n2);
+    pps = Number(pps);
+    multi = Number(multi);
 
-Cookies.set('nick', $nick);
+Cookies.set('nick', nick);
 Cookies.set('points', points);
 Cookies.set('rage', n2);
 Cookies.set('pps', pps);
 Cookies.set('multi', multi);
-
-alert(       
-    Cookies.get('nick')+
-    Cookies.get('points')+
-    Cookies.get('rage')+
-    Cookies.get('pps')+
-    Cookies.get('multi')
-);
-
-    //Save to DB
-   /* $.ajax({
-        url: "save.php",
-        type: "POST",
-        data:{
-            userID: $nick,
-            userPoints: $scores,
-            userUpgrades: $upgrades
-        },
-        async: false,
-        cache: false,
-        success: function(response){
-            alert('Data saved');
-            console.log(response);
-        },
-        error: function(resp){
-            alert('You fucked up mate :(');
-            alert(resp)
-        }
-    });*/
 
 }
 
