@@ -5,7 +5,8 @@ $(document).ready(function(){
 var arrow_keys_handler = function(e) {
     switch(e.keyCode){ 
         case 17: e.preventDefault(); break;
-        case 83: e.preventDefault() , shopShowHid(); break;
+        case 83: e.preventDefault() , movement.move.translate(e); break;
+        case 87: e.preventDefault() , movement.move.translate(e); break;
         //case 65: e.preventDefault() , saving(); break;
         case 77: e.preventDefault() , toggleMedia(); break;
         default: break; // do not block other keys
@@ -16,6 +17,52 @@ var arrow_keys_handler = function(e) {
     function toggleMedia(){
         $('div.media__container').fadeToggle(500);
     }
+
+    var movement = {
+        vars:{
+            rotate:{
+                x: 0,
+                y: 0,
+                z: 0
+            },
+            translate: {
+                x: 0,
+                y: 0,
+                z: 0
+            }
+        },
+        move:{
+            rotate: function(e){
+                switch(e.keyCode){
+                    case 83:switch(movement.vars.rotate.x){
+                        case 0: movement.vars.rotate.x = 90;break;
+                        case 90: movement.vars.rotate.x = 0; break;
+                    };break;
+
+                    case 87:switch(movement.vars.rotate.x){
+                        case 0: movement.vars.rotate.x -= 90;break;
+                        case -90: movement.vars.rotate.x = 0;break;
+                    };break;
+
+                    default: console.log('movement.move.rotate Error\nEvent:'+e);break;
+                }
+                document.querySelector('div.box__main').setAttribute('style', 'transform: rotateX('+movement.vars.rotate.x+'deg) rotateY('+movement.vars.rotate.y+'deg) rotateZ('+movement.vars.rotate.z+'deg);');
+            },
+            translate: function(e){
+                switch(e.keyCode){
+                    case 87: switch(movement.vars.translate.y){
+                        case 0: movement.vars.translate.y = -100;break;
+                        case -100: movement.vars.translate.y = 0;break;
+                    };break;
+                    case 83: switch(movement.vars.translate.y){
+                        case 0: movement.vars.translate.y = 100;break;
+                        case 100: movement.vars.translate.y = 0;break;
+                    };break;
+                }
+                document.querySelector('div.box__main').setAttribute('style', 'transform: translateY('+movement.vars.translate.y+'%);');
+            }
+        }
+    };
 
 //Inner functions
 var To = {
@@ -47,6 +94,9 @@ var n2;
 var points;
 var multi;
 var pps = 0;
+//Shop prices
+var pointsForRange = 20;
+var pointsForPps = 60;
 
 //var dataForm = document.querySelector('form.data');
     var n2FromDb = get.cookies.range;
@@ -73,6 +123,8 @@ var pps = 0;
         }
         else{
             multi = Number(multiFromDb);
+            pointsForRange *= (multi * 2); 
+            console.log(pointsForRange);
         }
     var ppsFromDb = get.cookies.pps;
         if(ppsFromDb === undefined || ppsFromDb === NaN){
@@ -80,6 +132,8 @@ var pps = 0;
         }
         else{
             pps = Number(ppsFromDb);
+            pointsForPps *= (pps * 2); 
+            console.log(pointsForPps);
             pointsPerSec();
         }
         To.pps(pps);
@@ -93,9 +147,6 @@ var pps = 0;
 
 var numberToGuess = Math.round(Math.random() * (n2 - n1) + n1);
 
-//vars for shop
-var pointsForRange = 20;
-var pointsForPps = 60;
 //end
 var hintOutput = $('div.hint');
 function HintShowHide(){

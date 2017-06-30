@@ -19,6 +19,9 @@
 .anim2b {
   transition: 0.3s 0s ease-in-out;
 }
+.animSlow {
+  transition: 3s 0s ease-in-out;
+}
 .shadowbox1 {
   -webkit-box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
   moz-box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
@@ -45,6 +48,7 @@ body {
   height: 100vh;
   overflow: hidden;
   background-color: #ff9000;
+  perspective: 100vw;
 }
 a {
   text-decoration: none;
@@ -61,6 +65,7 @@ a {
     width: 100vw;
     height: 100vw;
     background-color: #ff9000;
+    transition: 3s 0s ease-in-out;
   }
   .box__main input[type=number] {
     width: 70vw;
@@ -73,6 +78,14 @@ a {
     font-size: 2vw;
     padding: 0 1vw;
     border: 0px transparent none;
+  }
+  .box__main .sites__front {
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
+    width: 100vw;
+    height: 100vh;
+    perspective: 100vw;
+    transition: 1s 0s ease-out;
   }
   .box__main .welcome__text {
     position: absolute;
@@ -141,8 +154,11 @@ a {
     transition: 1s 0.11s ease-out;
   }
   .box__main .shop__icon:hover {
-    transition: 0.3s 0.11s ease-in-out;
-    border: 5px #ffffff dashed;
+    transition: 1s 0.11s ease-out;
+    background-color: #fd9000;
+    -webkit-box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
+    moz-box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.75);
   }
   .box__main .shop__box {
     position: fixed;

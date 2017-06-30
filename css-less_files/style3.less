@@ -18,6 +18,7 @@
 .anim1b{transition: 1s 0s ease-out;}
 .anim2a{transition: 0.3s 0.11s ease-in-out;}
 .anim2b{transition: 0.3s 0s ease-in-out;}
+.animSlow{transition: 3s 0s ease-in-out;}
 .shadowbox1{
   -webkit-box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
   moz-box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.75);
@@ -37,7 +38,9 @@ box-shadow: -1px -1px 25px 7.5px rgba(0,0,0,0.75);
 }
 //Fonts
 @import url('https://fonts.googleapis.com/css?family=Righteous');
- @import url('https://fonts.googleapis.com/css?family=Shrikhand');
+@import url('https://fonts.googleapis.com/css?family=Shrikhand');
+ 
+//Keyframes-like animations
 //Main
 
 *{
@@ -50,20 +53,13 @@ body
     height: 100vh;
     overflow: hidden;
     background-color: #ff9000;
+    perspective: 100vw;
+    
 }
 a{
   text-decoration: none;
   color: inherit;
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -79,6 +75,8 @@ a{
     width: 100vw;
     height: 100vw;
     background-color: #ff9000;
+    .animSlow;
+    
 
     input[type=number]{
       width: 70vw;
@@ -92,6 +90,17 @@ a{
       padding: 0 1vw;
       border: 0px transparent none;
     }
+    .sites{
+      &__front{
+        transform-style: preserve-3d;
+        transform-origin: 50% 50%;
+        width: 100vw;
+        height: 100vh;
+        perspective: 100vw;
+        .anim1b;
+      }
+    }
+
     .welcome__text{
       position: absolute;
       left: 25vw;
@@ -161,8 +170,9 @@ a{
           .anim1a; 
 
           &:hover{
-            .anim2a;
-            border: 5px #ffffff dashed;
+            .anim1a;
+            background-color: #fd9000;
+            .shadowbox1;
           }
         }
         &__box{
@@ -377,6 +387,7 @@ a{
     font-size: 2rem;
   }
 }
+
 }
 
 
